@@ -1,0 +1,728 @@
+<title>Biology Pre/Post Diagnostic — Georgia Milestones Aligned</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{
+  --bg:#F4F7F1; --surface:#FFFFFF; --surface-2:#EBF0E6; --surface-3:#F8FAF6;
+  --ink:#16211B; --ink-soft:#4A574D; --ink-faint:#75816F;
+  --line:#DBE3D4; --line-soft:#E7ECE1;
+  --accent:#2E6B4F; --accent-strong:#1E543C; --accent-soft:#E3EFE7; --on-accent:#FFFFFF;
+  --data:#2C6E8E;
+  --beginning:#BE5636; --developing:#C98A22; --proficient:#2E8B57; --distinguished:#2C6E9B;
+  --beginning-soft:#F7E3DB; --developing-soft:#F7ECD3; --proficient-soft:#DDEFE3; --distinguished-soft:#DCEAF3;
+  --shadow:0 1px 2px rgba(20,40,28,.06),0 8px 24px rgba(20,40,28,.06);
+  --radius:14px; --radius-sm:9px;
+  --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0F140E; --surface:#171E15; --surface-2:#1E2820; --surface-3:#141B12;
+    --ink:#E9EFE5; --ink-soft:#A7B4A7; --ink-faint:#7E8B7C;
+    --line:#2B372C; --line-soft:#232E24;
+    --accent:#6FBF95; --accent-strong:#8DD2AC; --accent-soft:#1A2A20; --on-accent:#0F140E;
+    --data:#74B7D6;
+    --beginning:#E08661; --developing:#E4B24E; --proficient:#5FC088; --distinguished:#69AEDA;
+    --beginning-soft:#2C1D17; --developing-soft:#2C2413; --proficient-soft:#152A1E; --distinguished-soft:#152431;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="light"]{
+  --bg:#F4F7F1; --surface:#FFFFFF; --surface-2:#EBF0E6; --surface-3:#F8FAF6;
+  --ink:#16211B; --ink-soft:#4A574D; --ink-faint:#75816F;
+  --line:#DBE3D4; --line-soft:#E7ECE1;
+  --accent:#2E6B4F; --accent-strong:#1E543C; --accent-soft:#E3EFE7; --on-accent:#FFFFFF; --data:#2C6E8E;
+  --beginning:#BE5636; --developing:#C98A22; --proficient:#2E8B57; --distinguished:#2C6E9B;
+  --beginning-soft:#F7E3DB; --developing-soft:#F7ECD3; --proficient-soft:#DDEFE3; --distinguished-soft:#DCEAF3;
+  --shadow:0 1px 2px rgba(20,40,28,.06),0 8px 24px rgba(20,40,28,.06);
+}
+:root[data-theme="dark"]{
+  --bg:#0F140E; --surface:#171E15; --surface-2:#1E2820; --surface-3:#141B12;
+  --ink:#E9EFE5; --ink-soft:#A7B4A7; --ink-faint:#7E8B7C;
+  --line:#2B372C; --line-soft:#232E24;
+  --accent:#6FBF95; --accent-strong:#8DD2AC; --accent-soft:#1A2A20; --on-accent:#0F140E; --data:#74B7D6;
+  --beginning:#E08661; --developing:#E4B24E; --proficient:#5FC088; --distinguished:#69AEDA;
+  --beginning-soft:#2C1D17; --developing-soft:#2C2413; --proficient-soft:#152A1E; --distinguished-soft:#152431;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--bg); color:var(--ink); font-family:var(--sans);
+  line-height:1.55; -webkit-font-smoothing:antialiased; font-size:16px;
+}
+.wrap{max-width:920px;margin:0 auto;padding:24px 20px 72px}
+.wrap.wide{max-width:1180px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;text-wrap:balance;line-height:1.15;margin:0}
+a{color:var(--accent-strong)}
+.eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;font-weight:700;color:var(--accent-strong)}
+.muted{color:var(--ink-soft)}
+.tnum{font-variant-numeric:tabular-nums}
+button{font-family:inherit}
+.btn{
+  appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);
+  padding:11px 18px;border-radius:var(--radius-sm);font-weight:600;font-size:.95rem;cursor:pointer;
+  transition:transform .06s ease,background .15s ease,border-color .15s ease;
+}
+.btn:hover{border-color:var(--accent)}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn.primary:hover{background:var(--accent-strong);border-color:var(--accent-strong)}
+.btn.ghost{background:transparent}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.sm{padding:7px 12px;font-size:.85rem}
+:focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 55%,transparent);outline-offset:2px;border-radius:6px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.hidden{display:none !important}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font-size:.74rem;font-weight:700;letter-spacing:.02em}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.spread{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+
+/* Top masthead */
+.mast{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}
+.brand{display:flex;align-items:center;gap:12px}
+.mark{width:40px;height:40px;border-radius:11px;background:linear-gradient(150deg,var(--accent),var(--accent-strong));display:grid;place-items:center;flex:0 0 auto;box-shadow:var(--shadow)}
+.mark svg{width:24px;height:24px}
+.brand h1{font-size:1.06rem}
+.brand .sub{font-size:.78rem;color:var(--ink-soft);font-family:var(--sans)}
+.top-actions{display:flex;gap:8px;align-items:center}
+.iconbtn{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);width:38px;height:38px;border-radius:10px;cursor:pointer;display:grid;place-items:center}
+.iconbtn:hover{border-color:var(--accent)}
+.iconbtn svg{width:18px;height:18px}
+
+/* START */
+.hero{padding:34px;display:grid;gap:22px}
+.hero-head{display:grid;gap:12px;max-width:62ch}
+.hero-head h2{font-size:2rem}
+.badges{display:flex;gap:8px;flex-wrap:wrap}
+.badge{border:1px solid var(--line);background:var(--surface-3);border-radius:999px;padding:5px 12px;font-size:.76rem;color:var(--ink-soft);font-weight:600}
+.blueprint{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.bp{border:1px solid var(--line);border-radius:var(--radius-sm);padding:12px 14px;background:var(--surface-3)}
+.bp .n{font-family:var(--serif);font-size:1.5rem;font-weight:600}
+.bp .l{font-size:.78rem;color:var(--ink-soft);line-height:1.3}
+.bp .s{font-size:.68rem;color:var(--ink-faint);font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label.field{display:grid;gap:6px;font-size:.82rem;font-weight:600;color:var(--ink-soft)}
+input[type=text],select{
+  font-family:inherit;font-size:1rem;color:var(--ink);background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--radius-sm);padding:11px 12px;width:100%;
+}
+input[type=text]::placeholder{color:var(--ink-faint)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden;background:var(--surface)}
+.seg button{border:0;background:transparent;padding:11px 18px;font-weight:700;color:var(--ink-soft);cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--accent);color:var(--on-accent)}
+.note{font-size:.82rem;color:var(--ink-soft);background:var(--surface-2);border:1px solid var(--line-soft);border-radius:var(--radius-sm);padding:12px 14px}
+ul.clean{margin:0;padding-left:18px}
+ul.clean li{margin:3px 0}
+
+/* TEST */
+.exam-top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin:-24px -20px 0;padding:12px 20px}
+.exam-top .inner{max-width:920px;margin:0 auto;display:flex;flex-direction:column;gap:9px}
+.exam-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:.84rem}
+.progress{height:7px;background:var(--surface-2);border-radius:999px;overflow:hidden}
+.progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-strong));width:0;transition:width .25s ease}
+.mode-chip{background:var(--accent-soft);color:var(--accent-strong);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent)}
+.q-card{padding:28px 30px;margin-top:24px;display:grid;gap:20px}
+.q-num{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint)}
+.q-stem{font-size:1.24rem;font-family:var(--serif);line-height:1.4}
+.opts{display:grid;gap:10px}
+.opt{display:flex;gap:13px;align-items:flex-start;border:1px solid var(--line);border-radius:var(--radius-sm);padding:13px 15px;cursor:pointer;background:var(--surface);transition:border-color .12s ease,background .12s ease}
+.opt:hover{border-color:var(--accent);background:var(--surface-3)}
+.opt.sel{border-color:var(--accent);background:var(--accent-soft)}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt .letter{flex:0 0 auto;width:27px;height:27px;border-radius:7px;border:1px solid var(--line);display:grid;place-items:center;font-weight:700;font-size:.86rem;color:var(--ink-soft);background:var(--surface)}
+.opt.sel .letter{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.opt .txt{padding-top:2px}
+.exam-nav{display:flex;justify-content:space-between;gap:12px;margin-top:22px;flex-wrap:wrap}
+.flagbtn{display:inline-flex;align-items:center;gap:7px}
+.flagbtn.on{color:var(--developing);border-color:var(--developing)}
+.navigator{margin-top:22px}
+.navigator summary{cursor:pointer;font-weight:600;font-size:.9rem;color:var(--ink-soft);padding:8px 0}
+.grid-q{display:grid;grid-template-columns:repeat(auto-fill,minmax(42px,1fr));gap:7px;margin-top:8px}
+.grid-q button{aspect-ratio:1;border:1px solid var(--line);background:var(--surface);border-radius:8px;font-weight:700;font-size:.82rem;color:var(--ink-soft);cursor:pointer;position:relative}
+.grid-q button.answered{background:var(--accent-soft);color:var(--accent-strong);border-color:color-mix(in srgb,var(--accent) 35%,transparent)}
+.grid-q button.current{outline:2px solid var(--accent);outline-offset:1px}
+.grid-q button.flag::after{content:"";position:absolute;top:3px;right:3px;width:6px;height:6px;border-radius:50%;background:var(--developing)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.76rem;color:var(--ink-soft);margin-top:10px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{width:11px;height:11px;border-radius:3px;display:inline-block;border:1px solid var(--line)}
+
+/* RESULTS */
+.result-head{padding:30px;display:grid;gap:8px;text-align:center;justify-items:center}
+.scorewheel{--pct:0;width:150px;height:150px;border-radius:50%;display:grid;place-items:center;
+  background:conic-gradient(var(--accent) calc(var(--pct)*1%),var(--surface-2) 0);margin:6px 0}
+.scorewheel .inner{width:118px;height:118px;border-radius:50%;background:var(--surface);display:grid;place-items:center;text-align:center}
+.scorewheel .big{font-family:var(--serif);font-size:2.2rem;font-weight:600;line-height:1}
+.scorewheel .cap{font-size:.72rem;color:var(--ink-soft);letter-spacing:.05em;text-transform:uppercase}
+.band-tag{font-size:.86rem;font-weight:700;padding:6px 14px;border-radius:999px}
+.tag-beginning{background:var(--beginning-soft);color:var(--beginning)}
+.tag-developing{background:var(--developing-soft);color:var(--developing)}
+.tag-proficient{background:var(--proficient-soft);color:var(--proficient)}
+.tag-distinguished{background:var(--distinguished-soft);color:var(--distinguished)}
+.dombars{display:grid;gap:14px;padding:26px 30px}
+.dombar{display:grid;gap:6px}
+.dombar .lab{display:flex;justify-content:space-between;font-size:.9rem;gap:10px}
+.dombar .lab .r{color:var(--ink-soft);font-weight:700}
+.bar{height:12px;background:var(--surface-2);border-radius:999px;overflow:hidden}
+.bar > i{display:block;height:100%;border-radius:999px}
+.result-actions{display:flex;gap:10px;flex-wrap:wrap;padding:0 30px 30px}
+
+/* TEACHER */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.tab{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 16px;font-weight:600;font-size:.88rem;color:var(--ink-soft);cursor:pointer}
+.tab[aria-selected=true]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:18px}
+.stat{padding:16px 18px}
+.stat .k{font-size:.74rem;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-faint);font-weight:700}
+.stat .v{font-family:var(--serif);font-size:2rem;font-weight:600;line-height:1.1;margin-top:4px}
+.stat .d{font-size:.78rem;color:var(--ink-soft)}
+table{border-collapse:collapse;width:100%;font-size:.88rem}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line-soft);white-space:nowrap}
+th{font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-faint);position:sticky;top:0;background:var(--surface)}
+tbody tr:hover{background:var(--surface-3)}
+.cell-m{font-weight:700;text-align:center;border-radius:6px;color:#fff;min-width:52px}
+.heat{display:grid;gap:2px}
+.band-dist{display:flex;height:26px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.band-dist > span{display:grid;place-items:center;font-size:.72rem;font-weight:700;color:#fff;min-width:0}
+.chiplist{display:flex;gap:6px;flex-wrap:wrap}
+.chip{background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:.78rem}
+textarea{width:100%;min-height:120px;font-family:var(--mono);font-size:.82rem;border:1px solid var(--line);border-radius:var(--radius-sm);padding:12px;background:var(--surface-3);color:var(--ink);resize:vertical}
+.reteach{display:grid;gap:12px}
+.reteach .grp{border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 16px;background:var(--surface-3)}
+.reteach .grp h4{margin:0 0 8px;font-family:var(--sans);font-size:.92rem}
+.empty{padding:40px;text-align:center;color:var(--ink-soft)}
+.gate{max-width:400px;margin:40px auto;padding:28px;display:grid;gap:14px;text-align:center}
+.footer{margin-top:36px;font-size:.78rem;color:var(--ink-faint);text-align:center;line-height:1.6}
+.modal-bg{position:fixed;inset:0;background:rgba(10,18,12,.5);display:grid;place-items:center;padding:20px;z-index:50}
+.modal{max-width:440px;width:100%;padding:24px;display:grid;gap:14px}
+@media (max-width:640px){
+  .form-grid{grid-template-columns:1fr}
+  .hero{padding:24px}
+  .q-card{padding:22px}
+  .hero-head h2{font-size:1.6rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+
+<div class="wrap" id="app"></div>
+
+<script id="ITEMS" type="application/json">[{"id": "Q1", "domain": "Cells", "standard": "SB1.a", "dok": 1, "stem": "Which organelle is the primary site of cellular respiration, releasing energy the cell can use?", "options": ["Mitochondrion", "Ribosome", "Golgi apparatus", "Vacuole"], "answer": 0, "correct_text": "Mitochondrion"}, {"id": "Q2", "domain": "Cells", "standard": "SB1.a", "dok": 2, "stem": "A cell's membrane controls what enters and leaves, its ribosomes build proteins, and its mitochondria supply energy. This coordinated activity best shows how organelles \u2014", "options": ["compete with one another for limited space", "work together as a system to maintain homeostasis", "each carry out every cell function independently", "function only during cell division"], "answer": 1, "correct_text": "work together as a system to maintain homeostasis"}, {"id": "Q3", "domain": "Cells", "standard": "SB1.b", "dok": 2, "stem": "How does mitosis differ from meiosis?", "options": ["Meiosis produces two cells identical to the parent cell", "Mitosis produces four unique gametes used for reproduction", "Mitosis makes identical cells; meiosis makes varied gametes", "Both processes always produce cells with doubled chromosome numbers"], "answer": 2, "correct_text": "Mitosis makes identical cells; meiosis makes varied gametes"}, {"id": "Q4", "domain": "Cells", "standard": "SB1.b", "dok": 2, "stem": "Binary fission in bacteria and mitosis in your skin cells both maintain genetic continuity because each \u2014", "options": ["reduces the chromosome number by half each cycle", "requires two parent organisms in order to occur", "copies the DNA so the new cells match the parent", "produces gametes that are later used in fertilization"], "answer": 2, "correct_text": "copies the DNA so the new cells match the parent"}, {"id": "Q5", "domain": "Cells", "standard": "SB1.c", "dok": 1, "stem": "Which type of macromolecule stores hereditary information and directs protein synthesis?", "options": ["Nucleic acid", "Carbohydrate", "Lipid", "Phospholipid"], "answer": 0, "correct_text": "Nucleic acid"}, {"id": "Q6", "domain": "Cells", "standard": "SB1.d", "dok": 3, "stem": "A freshwater plant cell is placed in very salty water. What will happen to the water in the cell?", "options": ["Water will move into the cell, causing it to swell", "Water will stay balanced because the cell is isotonic", "Water will move out of the cell, causing it to shrink", "Water will stop moving across the membrane entirely"], "answer": 2, "correct_text": "Water will move out of the cell, causing it to shrink"}, {"id": "Q7", "domain": "Cells", "standard": "SB1.d", "dok": 2, "stem": "Which process moves molecules from an area of high concentration to low concentration WITHOUT using cellular energy?", "options": ["Active transport", "Endocytosis", "Exocytosis", "Diffusion"], "answer": 3, "correct_text": "Diffusion"}, {"id": "Q8", "domain": "Cells", "standard": "SB1.e", "dok": 2, "stem": "Which statement best describes the relationship between photosynthesis and cellular respiration?", "options": ["Both processes release oxygen as a waste product", "The products of one process are the reactants of the other", "Both processes occur only in animal cells", "Respiration stores energy while photosynthesis releases it"], "answer": 1, "correct_text": "The products of one process are the reactants of the other"}, {"id": "Q9", "domain": "Cellular Genetics & Heredity", "standard": "SB2.a", "dok": 1, "stem": "The repeating subunits (monomers) that make up a molecule of DNA are called \u2014", "options": ["nucleotides", "amino acids", "fatty acids", "monosaccharides"], "answer": 0, "correct_text": "nucleotides"}, {"id": "Q10", "domain": "Cellular Genetics & Heredity", "standard": "SB2.a", "dok": 2, "stem": "During which process is the information in DNA used to build a molecule of messenger RNA (mRNA)?", "options": ["Replication", "Translation", "Digestion", "Transcription"], "answer": 3, "correct_text": "Transcription"}, {"id": "Q11", "domain": "Cellular Genetics & Heredity", "standard": "SB2.b", "dok": 1, "stem": "A change in the sequence of DNA bases, sometimes caused by radiation or certain chemicals, is called a \u2014", "options": ["fertilization", "dominant trait", "phenotype", "mutation"], "answer": 3, "correct_text": "mutation"}, {"id": "Q12", "domain": "Cellular Genetics & Heredity", "standard": "SB2.b", "dok": 3, "stem": "Crossing over during meiosis increases genetic variation because it \u2014", "options": ["makes exact copies of each chromosome for the gametes", "swaps segments between homologous chromosomes", "lowers the total number of genes found in a cell", "stops fertilization from being able to take place"], "answer": 1, "correct_text": "swaps segments between homologous chromosomes"}, {"id": "Q13", "domain": "Cellular Genetics & Heredity", "standard": "SB2.c", "dok": 2, "stem": "Which is an ethical concern often raised about using biotechnology such as genetically modified crops?", "options": ["Modified crops can never increase how much food is produced", "DNA can never be moved between two different organisms", "The process always removes all genetic variation from crops", "Possible long-term effects on health are still debated"], "answer": 3, "correct_text": "Possible long-term effects on health are still debated"}, {"id": "Q14", "domain": "Cellular Genetics & Heredity", "standard": "SB3.a", "dok": 2, "stem": "Mendel's law of segregation is explained by which event during meiosis?", "options": ["Alleles separating into different gametes", "The copying of all the DNA before the cell divides", "Two gametes joining together during fertilization", "Chromosomes being copied in ordinary body cells"], "answer": 0, "correct_text": "Alleles separating into different gametes"}, {"id": "Q15", "domain": "Cellular Genetics & Heredity", "standard": "SB3.b", "dok": 2, "stem": "In pea plants, tall (T) is dominant to short (t). If two Tt plants are crossed, what fraction of the offspring are expected to be short?", "options": ["0 (none)", "1/4", "1/2", "3/4"], "answer": 1, "correct_text": "1/4"}, {"id": "Q16", "domain": "Cellular Genetics & Heredity", "standard": "SB3.b", "dok": 3, "stem": "In four-o'clock flowers, red (R) and white (W) alleles show incomplete dominance, so RW plants are pink. Crossing two pink plants gives offspring in about what ratio?", "options": ["all pink", "1 red : 2 pink : 1 white", "3 red : 1 white", "all red"], "answer": 1, "correct_text": "1 red : 2 pink : 1 white"}, {"id": "Q17", "domain": "Cellular Genetics & Heredity", "standard": "SB3.c", "dok": 2, "stem": "Which is an advantage of asexual reproduction compared with sexual reproduction?", "options": ["It produces much greater genetic variation", "A single parent can reproduce quickly", "Offspring are better able to adapt to change", "It requires two parents and more total energy"], "answer": 1, "correct_text": "A single parent can reproduce quickly"}, {"id": "Q18", "domain": "Classification & Phylogeny", "standard": "SB4.a", "dok": 2, "stem": "The theory of endosymbiosis explains the origin of mitochondria and chloroplasts by proposing that they \u2014", "options": ["developed from inward folds of the cell membrane over time", "split off from the cell's nucleus a very long time ago", "were once free-living bacteria taken in by a host cell", "are built only out of nucleic acids"], "answer": 2, "correct_text": "were once free-living bacteria taken in by a host cell"}, {"id": "Q19", "domain": "Classification & Phylogeny", "standard": "SB4.a", "dok": 1, "stem": "Which group of organisms is made of cells that LACK a membrane-bound nucleus?", "options": ["Animals", "Plants", "Bacteria", "Fungi"], "answer": 2, "correct_text": "Bacteria"}, {"id": "Q20", "domain": "Classification & Phylogeny", "standard": "SB4.b", "dok": 3, "stem": "On a cladogram, two species whose branches share the most recent common ancestor are \u2014", "options": ["the most distantly related", "unrelated to all other species", "identical in every trait", "the most closely related"], "answer": 3, "correct_text": "the most closely related"}, {"id": "Q21", "domain": "Classification & Phylogeny", "standard": "SB4.c", "dok": 2, "stem": "Why do many scientists argue that viruses are NOT truly living organisms?", "options": ["They contain genetic material", "They are made of proteins", "They cannot reproduce without a host cell", "They are able to cause diseases"], "answer": 2, "correct_text": "They cannot reproduce without a host cell"}, {"id": "Q22", "domain": "Classification & Phylogeny", "standard": "SB4.b", "dok": 2, "stem": "Two species are found to have very similar DNA and protein sequences. This is best used as evidence that they \u2014", "options": ["live in the same habitat", "share a common ancestor", "are the same species", "do not evolve at all"], "answer": 1, "correct_text": "share a common ancestor"}, {"id": "Q23", "domain": "Ecology", "standard": "SB5.a", "dok": 1, "stem": "The largest population size that an environment can support over time is called its \u2014", "options": ["carrying capacity", "biodiversity", "keystone species", "limiting factor"], "answer": 0, "correct_text": "carrying capacity"}, {"id": "Q24", "domain": "Ecology", "standard": "SB5.a", "dok": 2, "stem": "Which is a density-dependent limiting factor for a growing deer population?", "options": ["Disease spreading as the population grows", "An unusually severe drought during the winter", "A fast-moving forest fire in the area", "A sudden drop in the outdoor temperature"], "answer": 0, "correct_text": "Disease spreading as the population grows"}, {"id": "Q25", "domain": "Ecology", "standard": "SB5.a", "dok": 2, "stem": "A keystone species is best described as one that \u2014", "options": ["is the single largest organism found in its ecosystem", "is always the top predator in a food web", "simply lives longer than the other species do", "strongly affects its ecosystem despite low numbers"], "answer": 3, "correct_text": "strongly affects its ecosystem despite low numbers"}, {"id": "Q26", "domain": "Ecology", "standard": "SB5.b", "dok": 2, "stem": "In an energy pyramid, the amount of energy available at each higher level \u2014", "options": ["decreases", "increases", "stays exactly the same", "disappears completely"], "answer": 0, "correct_text": "decreases"}, {"id": "Q27", "domain": "Ecology", "standard": "SB5.b", "dok": 3, "stem": "A disease kills most of the producers in a food web. What is the most immediate effect on the primary consumers?", "options": ["They increase rapidly in number", "They become producers themselves", "They lose their main source of food", "They gain more available energy"], "answer": 2, "correct_text": "They lose their main source of food"}, {"id": "Q28", "domain": "Ecology", "standard": "SB5.b", "dok": 2, "stem": "Which statement best explains why decomposers are essential in an ecosystem?", "options": ["They make most of the oxygen in the air", "They give energy directly to the sun", "They keep matter from cycling at all", "They return nutrients to the soil"], "answer": 3, "correct_text": "They return nutrients to the soil"}, {"id": "Q29", "domain": "Ecology", "standard": "SB5.c", "dok": 3, "stem": "A greater variety of species (high biodiversity) usually makes an ecosystem more stable because it \u2014", "options": ["prevents any change from ever occurring", "guarantees that no species will ever go extinct", "removes all competition among the organisms", "provides more ways to recover from disturbance"], "answer": 3, "correct_text": "provides more ways to recover from disturbance"}, {"id": "Q30", "domain": "Ecology", "standard": "SB5.d", "dok": 2, "stem": "Which human action would most directly REDUCE the negative impact of humans on the environment?", "options": ["Clearing large areas of forest for new farmland", "Releasing a non-native fish into a lake", "Restoring wetlands and native plants", "Burning more fossil fuels to produce energy"], "answer": 2, "correct_text": "Restoring wetlands and native plants"}, {"id": "Q31", "domain": "Ecology", "standard": "SB5.d", "dok": 2, "stem": "Introducing a non-native (invasive) species to an ecosystem often reduces biodiversity because the invader \u2014", "options": ["almost always dies off very quickly", "increases the food supply for every species", "has many natural predators already present", "outcompetes native species for resources"], "answer": 3, "correct_text": "outcompetes native species for resources"}, {"id": "Q32", "domain": "Ecology", "standard": "SB5.e", "dok": 2, "stem": "An organism is MOST likely to survive an environmental change if it \u2014", "options": ["completely stops reproducing during the change", "can tolerate the new conditions with its traits", "carries no genetic variation at all in its population", "happens to be the largest member of its species"], "answer": 1, "correct_text": "can tolerate the new conditions with its traits"}, {"id": "Q33", "domain": "Ecology", "standard": "SB5.a", "dok": 3, "stem": "A population grows quickly and then levels off near a steady size. The leveling off happens because the population has \u2014", "options": ["run out of every resource all at once", "no limiting factors acting on it", "permanently stopped reproducing", "reached its carrying capacity"], "answer": 3, "correct_text": "reached its carrying capacity"}, {"id": "Q34", "domain": "Theory of Evolution", "standard": "SB6.a", "dok": 2, "stem": "New understandings of Earth's great age and the fossil record influenced biology mainly by \u2014", "options": ["supporting the idea that species change over time", "proving that species can never change at all", "showing that Earth is only a few thousand years old", "disproving everything that is known about genetics"], "answer": 0, "correct_text": "supporting the idea that species change over time"}, {"id": "Q35", "domain": "Theory of Evolution", "standard": "SB6.b", "dok": 1, "stem": "Speciation, the formation of new species over time, tends to increase an area's \u2014", "options": ["extinction rate only", "biodiversity", "age of the Earth", "average body size"], "answer": 1, "correct_text": "biodiversity"}, {"id": "Q36", "domain": "Theory of Evolution", "standard": "SB6.c", "dok": 2, "stem": "The forelimbs of humans, whales, and bats all share the same basic bone arrangement. These homologous structures are evidence of \u2014", "options": ["identical environments", "common ancestry", "completely different genetic codes", "unrelated origins"], "answer": 1, "correct_text": "common ancestry"}, {"id": "Q37", "domain": "Theory of Evolution", "standard": "SB6.c", "dok": 3, "stem": "Which additional finding would BEST support the claim that two species share a common ancestor?", "options": ["They have very similar DNA and protein sequences", "They happen to live on the same continent", "They are about the same color", "They are hunted by the same predator"], "answer": 0, "correct_text": "They have very similar DNA and protein sequences"}, {"id": "Q38", "domain": "Theory of Evolution", "standard": "SB6.d", "dok": 3, "stem": "Genetic drift differs from natural selection because genetic drift \u2014", "options": ["changes allele frequencies by chance", "always improves an organism's survival", "occurs only in very large populations", "never changes a population at all"], "answer": 0, "correct_text": "changes allele frequencies by chance"}, {"id": "Q39", "domain": "Theory of Evolution", "standard": "SB6.e", "dok": 3, "stem": "Repeated use of an antibiotic can produce a resistant bacterial population because the antibiotic \u2014", "options": ["causes the bacteria to mutate on purpose each time", "teaches the bacteria how to become stronger", "lets resistant bacteria survive and reproduce", "has no real effect on the bacteria at all"], "answer": 2, "correct_text": "lets resistant bacteria survive and reproduce"}, {"id": "Q40", "domain": "Theory of Evolution", "standard": "SB6.e", "dok": 2, "stem": "In natural selection, which individuals are most likely to pass their traits to the next generation?", "options": ["The largest individuals in the group", "The youngest individuals in the group", "Those best suited to their environment", "Those that reproduce the least often"], "answer": 2, "correct_text": "Those best suited to their environment"}]</script>
+<script id="META" type="application/json">{"domains": [{"name": "Cells", "standards": "SB1", "pct": 20}, {"name": "Cellular Genetics & Heredity", "standards": "SB2, SB3", "pct": 23}, {"name": "Classification & Phylogeny", "standards": "SB4", "pct": 13}, {"name": "Ecology", "standards": "SB5", "pct": 27}, {"name": "Theory of Evolution", "standards": "SB6", "pct": 17}], "elements": {"SB1.a": "Cell structures/organelles interacting to maintain homeostasis", "SB1.b": "Cellular reproduction (binary fission, mitosis, meiosis) & genetic continuity", "SB1.c": "Macromolecule structure related to function", "SB1.d": "Cellular transport & homeostasis", "SB1.e": "Photosynthesis & respiration: cycling of matter, flow of energy", "SB2.a": "DNA/RNA structure \u2192 replication, transcription, translation", "SB2.b": "Sources of inheritable genetic variation & mutations", "SB2.c": "Biotechnology uses & ethical considerations", "SB3.a": "Mendel's laws & the role of meiosis in variability", "SB3.b": "Patterns of inheritance (Punnett squares, probability)", "SB3.c": "Advantages/disadvantages of sexual vs. asexual reproduction", "SB4.a": "Patterns among clades; origin of eukaryotes by endosymbiosis", "SB4.b": "Cladograms/phylogenetic trees & common ancestry", "SB4.c": "Comparing viruses and organisms", "SB5.a": "Factors affecting biodiversity & populations (carrying capacity, limiting factors, keystone)", "SB5.b": "Cycling of matter & flow of energy (food webs, energy pyramids, cycles)", "SB5.c": "Impact of environmental change on ecosystem stability", "SB5.d": "Reducing human impact on the environment", "SB5.e": "Surviving within changing environmental limits", "SB6.a": "How new understandings shaped our view of biology", "SB6.b": "Patterns in biodiversity from speciation", "SB6.c": "Evidence for common descent (morphology, embryology, biochemistry, genetics)", "SB6.d": "Natural selection & genetic drift (mathematical models)", "SB6.e": "Natural selection & biological resistance"}, "bands": [{"key": "Beginning", "min": 0, "max": 39, "tag": "beginning"}, {"key": "Developing", "min": 40, "max": 59, "tag": "developing"}, {"key": "Proficient", "min": 60, "max": 79, "tag": "proficient"}, {"key": "Distinguished", "min": 80, "max": 100, "tag": "distinguished"}], "passcode": "biology"}</script>
+<script>
+"use strict";
+const ITEMS = JSON.parse(document.getElementById('ITEMS').textContent);
+const META  = JSON.parse(document.getElementById('META').textContent);
+const LETTERS=['A','B','C','D'];
+const STORE_KEY='gm_bio_attempts_v1';
+const app=document.getElementById('app');
+
+/* ---------- theme ---------- */
+function initTheme(){
+  const saved=localStorage.getItem('gm_bio_theme');
+  if(saved) document.documentElement.setAttribute('data-theme',saved);
+}
+function toggleTheme(){
+  const cur=document.documentElement.getAttribute('data-theme');
+  const isDark = cur ? cur==='dark' : matchMedia('(prefers-color-scheme:dark)').matches;
+  const next=isDark?'light':'dark';
+  document.documentElement.setAttribute('data-theme',next);
+  localStorage.setItem('gm_bio_theme',next);
+}
+initTheme();
+
+/* ---------- helpers ---------- */
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function domainMeta(name){return META.domains.find(d=>d.name===name);}
+function bandFor(pct){for(const b of META.bands){if(pct>=b.min&&pct<=b.max)return b;}return META.bands[0];}
+function mColor(pct){ if(pct>=70)return 'var(--proficient)'; if(pct>=50)return 'var(--developing)'; return 'var(--beginning)';}
+function fmtDate(iso){const d=new Date(iso);return d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'});}
+function loadAttempts(){try{return JSON.parse(localStorage.getItem(STORE_KEY)||'[]');}catch(e){return[];}}
+function saveAttempts(a){localStorage.setItem(STORE_KEY,JSON.stringify(a));}
+
+/* score a set of answers (array of chosen index or null, aligned to ITEMS order) */
+function scoreAttempt(answers){
+  let correct=0; const byDomain={}, byStd={};
+  META.domains.forEach(d=>byDomain[d.name]={c:0,n:0});
+  ITEMS.forEach((it,i)=>{
+    byStd[it.standard]=byStd[it.standard]||{c:0,n:0,domain:it.domain};
+    byDomain[it.domain].n++; byStd[it.standard].n++;
+    const ok = answers[i]!=null && answers[i]===it.answer;
+    if(ok){correct++;byDomain[it.domain].c++;byStd[it.standard].c++;}
+  });
+  const pct=Math.round(correct/ITEMS.length*100);
+  return {correct,total:ITEMS.length,pct,byDomain,byStd,band:bandFor(pct).key};
+}
+
+/* ================= STATE ================= */
+let S={view:'start', student:{name:'',period:''}, mode:'Pre',
+       answers:new Array(ITEMS.length).fill(null), flagged:new Set(),
+       idx:0, startTs:null, teacherTab:'overview', teacherOk:false};
+
+/* ================= MASTHEAD ================= */
+function masthead(){
+  return `<div class="mast">
+    <div class="brand">
+      <div class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round">
+        <path d="M7 3c0 6 10 6 10 12M17 3c0 6-10 6-10 12M7 21c0-2 10-2 10 0M8 8h8M8 16h8"/></svg></div>
+      <div><h1>Biology Diagnostic</h1><div class="sub">Pre &amp; Post Assessment · Georgia Standards of Excellence</div></div>
+    </div>
+    <div class="top-actions">
+      <button class="iconbtn" id="themeBtn" title="Toggle light / dark" aria-label="Toggle light or dark theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </div>
+  </div>`;
+}
+
+/* ================= START ================= */
+function renderStart(){
+  const bp=META.domains.map(d=>`<div class="bp"><div class="s">${esc(d.standards)}</div><div class="n tnum">${d.pct}%</div><div class="l">${esc(d.name)}</div></div>`).join('');
+  app.className='wrap';
+  app.innerHTML=masthead()+`
+  <div class="card hero">
+    <div class="hero-head">
+      <div class="eyebrow">18-Week Semester · Grade 10 Biology</div>
+      <h2>Measure where students start — and how far they grow.</h2>
+      <p class="muted">40 questions across the five Georgia Milestones Biology reporting categories. Take it as a <strong>pre-test</strong> to guide instruction, then again as a <strong>post-test</strong> to measure learning. Results break down by standard so instruction can be targeted, not guessed.</p>
+      <div class="badges">
+        <span class="badge">40 items</span><span class="badge">Auto-scored</span>
+        <span class="badge">Standard-by-standard data</span><span class="badge">DOK 1–3</span>
+      </div>
+    </div>
+    <div class="blueprint">${bp}</div>
+
+    <div style="height:1px;background:var(--line)"></div>
+
+    <div class="form-grid">
+      <label class="field">Student name
+        <input type="text" id="fName" placeholder="First and last name" autocomplete="off" value="${esc(S.student.name)}">
+      </label>
+      <label class="field">Class period / section
+        <input type="text" id="fPeriod" placeholder="e.g., 3rd Period" autocomplete="off" value="${esc(S.student.period)}">
+      </label>
+    </div>
+    <div class="spread">
+      <div>
+        <div class="field" style="margin-bottom:6px">Which administration is this?</div>
+        <div class="seg" role="group" aria-label="Test administration">
+          <button id="mPre"  aria-pressed="${S.mode==='Pre'}">Pre-Test</button>
+          <button id="mPost" aria-pressed="${S.mode==='Post'}">Post-Test</button>
+        </div>
+      </div>
+      <button class="btn primary" id="beginBtn" style="align-self:flex-end;padding:13px 26px;font-size:1rem">Begin the test →</button>
+    </div>
+    <div class="note">You can move backward and forward, flag questions to revisit, and change answers until you submit. Answer every question for the most useful results. There is no time limit.</div>
+  </div>
+  <div class="footer">
+    Aligned to the Georgia Standards of Excellence for Biology (26.01200) and the Georgia Milestones Biology EOC blueprint.
+    <br><button class="btn ghost sm" id="teacherBtn" style="margin-top:10px">Teacher dashboard &amp; results</button>
+  </div>`;
+
+  document.getElementById('themeBtn').onclick=toggleTheme;
+  document.getElementById('fName').oninput=e=>S.student.name=e.target.value;
+  document.getElementById('fPeriod').oninput=e=>S.student.period=e.target.value;
+  document.getElementById('mPre').onclick=()=>{S.mode='Pre';renderStart();};
+  document.getElementById('mPost').onclick=()=>{S.mode='Post';renderStart();};
+  document.getElementById('beginBtn').onclick=beginTest;
+  document.getElementById('teacherBtn').onclick=()=>{S.view='teacher';render();};
+}
+
+function beginTest(){
+  if(!S.student.name.trim()){alert('Please enter the student name before starting.');document.getElementById('fName').focus();return;}
+  S.answers=new Array(ITEMS.length).fill(null); S.flagged=new Set(); S.idx=0;
+  S.startTs=Date.now(); S.view='test'; render();
+}
+
+/* ================= TEST ================= */
+function renderTest(){
+  const it=ITEMS[S.idx];
+  const answered=S.answers.filter(a=>a!=null).length;
+  const pct=Math.round((S.idx)/ITEMS.length*100);
+  app.className='wrap';
+  const optsHtml=it.options.map((o,i)=>{
+    const sel=S.answers[S.idx]===i;
+    return `<label class="opt ${sel?'sel':''}" data-i="${i}">
+      <span class="letter">${LETTERS[i]}</span>
+      <input type="radio" name="q" ${sel?'checked':''}>
+      <span class="txt">${esc(o)}</span></label>`;
+  }).join('');
+  const grid=ITEMS.map((_,i)=>{
+    const cls=[S.answers[i]!=null?'answered':'',i===S.idx?'current':'',S.flagged.has(i)?'flag':''].join(' ');
+    return `<button class="${cls}" data-g="${i}">${i+1}</button>`;
+  }).join('');
+  const isLast=S.idx===ITEMS.length-1;
+  app.innerHTML=`
+  <div class="exam-top"><div class="inner">
+    <div class="exam-meta">
+      <span class="pill mode-chip">${S.mode}-Test</span>
+      <strong class="tnum">Question ${S.idx+1} <span class="muted">of ${ITEMS.length}</span></strong>
+      <span class="muted tnum">· ${answered} answered</span>
+      <span style="flex:1"></span>
+      <span class="muted tnum" id="clock">00:00</span>
+    </div>
+    <div class="progress"><i style="width:${pct}%"></i></div>
+  </div></div>
+
+  <div class="card q-card">
+    <div class="spread">
+      <span class="q-num">Question ${S.idx+1}</span>
+      <button class="btn sm ghost flagbtn ${S.flagged.has(S.idx)?'on':''}" id="flagBtn">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4h11l-2 3 2 3H5"/></svg>
+        ${S.flagged.has(S.idx)?'Flagged':'Flag'}
+      </button>
+    </div>
+    <div class="q-stem">${esc(it.stem)}</div>
+    <div class="opts" id="opts">${optsHtml}</div>
+  </div>
+
+  <div class="exam-nav">
+    <button class="btn ghost" id="prevBtn" ${S.idx===0?'disabled':''}>← Back</button>
+    ${isLast
+      ? `<button class="btn primary" id="reviewBtn">Review &amp; submit →</button>`
+      : `<button class="btn primary" id="nextBtn">Next →</button>`}
+  </div>
+
+  <details class="navigator" ${answered>0?'':''}>
+    <summary>Question navigator — jump to any question</summary>
+    <div class="grid-q">${grid}</div>
+    <div class="legend">
+      <span><i class="dot" style="background:var(--accent-soft);border-color:var(--accent)"></i> Answered</span>
+      <span><i class="dot" style="background:var(--surface)"></i> Unanswered</span>
+      <span><i class="dot" style="background:var(--developing)"></i> Flagged</span>
+    </div>
+  </details>`;
+
+  document.querySelectorAll('.opt').forEach(el=>{
+    el.onclick=()=>{S.answers[S.idx]=+el.dataset.i;renderTest();};
+  });
+  const prev=document.getElementById('prevBtn'); if(prev)prev.onclick=()=>{S.idx--;renderTest();window.scrollTo(0,0);};
+  const nx=document.getElementById('nextBtn'); if(nx)nx.onclick=()=>{S.idx++;renderTest();window.scrollTo(0,0);};
+  const rv=document.getElementById('reviewBtn'); if(rv)rv.onclick=reviewSubmit;
+  document.getElementById('flagBtn').onclick=()=>{S.flagged.has(S.idx)?S.flagged.delete(S.idx):S.flagged.add(S.idx);renderTest();};
+  document.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{S.idx=+b.dataset.g;renderTest();window.scrollTo(0,0);});
+  startClock();
+}
+let clockTimer=null;
+function startClock(){
+  const el=document.getElementById('clock'); if(!el||!S.startTs)return;
+  if(clockTimer)clearInterval(clockTimer);
+  const tick=()=>{const s=Math.floor((Date.now()-S.startTs)/1000);const m=String(Math.floor(s/60)).padStart(2,'0');const ss=String(s%60).padStart(2,'0');const c=document.getElementById('clock');if(c)c.textContent=`${m}:${ss}`;};
+  tick(); clockTimer=setInterval(tick,1000);
+}
+
+function reviewSubmit(){
+  const answered=S.answers.filter(a=>a!=null).length;
+  const missing=ITEMS.length-answered;
+  let msg=`Submit your ${S.mode}-test?`;
+  if(missing>0)msg+=`\n\nYou have ${missing} unanswered question${missing>1?'s':''}. Unanswered questions are counted as incorrect.`;
+  if(confirm(msg))submitTest();
+}
+
+function submitTest(){
+  if(clockTimer)clearInterval(clockTimer);
+  const duration=S.startTs?Math.round((Date.now()-S.startTs)/1000):0;
+  const sc=scoreAttempt(S.answers);
+  const attempt={
+    name:S.student.name.trim(), period:S.student.period.trim(), mode:S.mode,
+    date:new Date().toISOString(), durationSec:duration,
+    answers:S.answers.slice(), pct:sc.pct
+  };
+  const all=loadAttempts(); all.push(attempt); saveAttempts(all);
+  S.lastAttempt=attempt; S.lastScore=sc; S.view='submitted'; render();
+}
+
+/* ================= STUDENT RESULTS ================= */
+function renderSubmitted(){
+  const a=S.lastAttempt, sc=S.lastScore, band=bandFor(sc.pct);
+  app.className='wrap';
+  const bars=META.domains.map(d=>{
+    const o=sc.byDomain[d.name]; const p=o.n?Math.round(o.c/o.n*100):0;
+    return `<div class="dombar"><div class="lab"><span>${esc(d.name)}</span><span class="r tnum">${o.c}/${o.n} · ${p}%</span></div>
+      <div class="bar"><i style="width:${p}%;background:${mColor(p)}"></i></div></div>`;
+  }).join('');
+  app.innerHTML=masthead()+`
+  <div class="card result-head">
+    <div class="eyebrow">${esc(a.mode)}-Test complete</div>
+    <h2>Nice work, ${esc(a.name.split(' ')[0]||a.name)}.</h2>
+    <div class="scorewheel" style="--pct:${sc.pct}"><div class="inner"><div><div class="big tnum">${sc.pct}%</div><div class="cap">${sc.correct}/${sc.total}</div></div></div></div>
+    <div class="band-tag tag-${band.tag}">Projected: ${band.key} Learner</div>
+    <p class="muted" style="max-width:52ch">This snapshot shows your strengths and the areas to focus on. Your teacher receives a detailed breakdown by standard to plan support.</p>
+  </div>
+  <div class="card dombars" style="margin-top:16px">
+    <h3 style="font-size:1.05rem">Your results by reporting category</h3>
+    ${bars}
+  </div>
+  <div class="result-actions">
+    <button class="btn primary" id="dl">Download my results</button>
+    <button class="btn" id="cp">Copy results for teacher</button>
+    <button class="btn ghost" id="again">Done</button>
+  </div>
+  <div class="footer">Projected level is an approximate instructional guide based on percent correct, not an official Georgia Milestones scale score.</div>`;
+  document.getElementById('dl').onclick=()=>downloadCSV([a]);
+  document.getElementById('cp').onclick=e=>{navigator.clipboard.writeText(attemptToCSVRow(a)).then(()=>{e.target.textContent='Copied ✓';});};
+  document.getElementById('again').onclick=()=>{S.view='start';S.student={name:'',period:''};render();};
+}
+
+/* ================= CSV ================= */
+function csvHeader(){return ['Name','Period','Mode','Date','DurationSec','Score%'].concat(ITEMS.map(it=>it.id)).join(',');}
+function attemptToCSVRow(a){
+  const cells=[a.name,a.period,a.mode,a.date,a.durationSec,a.pct].map(csvCell);
+  const ans=a.answers.map(x=>x==null?'':LETTERS[x]);
+  return cells.concat(ans).join(',');
+}
+function csvCell(v){v=String(v==null?'':v);return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;}
+function downloadCSV(list){
+  const csv=[csvHeader()].concat(list.map(attemptToCSVRow)).join('\n');
+  const blob=new Blob([csv],{type:'text/csv'});const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');a.href=url;
+  a.download=list.length===1?`biology_${(list[0].mode||'')}_${(list[0].name||'student').replace(/\s+/g,'_')}.csv`:'biology_class_results.csv';
+  a.click();URL.revokeObjectURL(url);
+}
+function parseCSV(text){
+  const rows=[];let i=0,cur='',row=[],q=false;
+  while(i<text.length){const c=text[i];
+    if(q){ if(c==='"'){ if(text[i+1]==='"'){cur+='"';i++;} else q=false;} else cur+=c;}
+    else{ if(c==='"')q=true; else if(c===','){row.push(cur);cur='';} else if(c==='\n'||c==='\r'){ if(c==='\r'&&text[i+1]==='\n')i++; if(cur!==''||row.length){row.push(cur);rows.push(row);row=[];cur='';}} else cur+=c;}
+    i++;}
+  if(cur!==''||row.length){row.push(cur);rows.push(row);}
+  return rows;
+}
+function importCSV(text){
+  const rows=parseCSV(text.trim()); if(!rows.length)return 0;
+  let start=0; const head=rows[0].map(h=>h.trim().toLowerCase());
+  if(head[0]==='name'||head.includes('score%'))start=1;
+  const existing=loadAttempts(); let added=0;
+  for(let r=start;r<rows.length;r++){
+    const row=rows[r]; if(row.length<6||!row[0].trim())continue;
+    const answers=ITEMS.map((_,k)=>{const v=(row[6+k]||'').trim().toUpperCase();const idx=LETTERS.indexOf(v);return idx<0?null:idx;});
+    const pct=Number(row[5])||scoreAttempt(answers).pct;
+    const at={name:row[0].trim(),period:(row[1]||'').trim(),mode:(row[2]||'Pre').trim(),date:(row[3]||new Date().toISOString()),durationSec:Number(row[4])||0,answers,pct};
+    const dup=existing.some(e=>e.name===at.name&&e.mode===at.mode&&e.date===at.date);
+    if(!dup){existing.push(at);added++;}
+  }
+  saveAttempts(existing); return added;
+}
+
+/* ================= TEACHER ================= */
+function render(){
+  if(S.view==='start')return renderStart();
+  if(S.view==='test')return renderTest();
+  if(S.view==='submitted')return renderSubmitted();
+  if(S.view==='teacher')return renderTeacher();
+}
+function renderTeacher(){
+  app.className='wrap wide';
+  if(!S.teacherOk){
+    app.innerHTML=masthead()+`
+    <div class="card gate">
+      <h2 style="font-size:1.3rem">Teacher access</h2>
+      <p class="muted" style="font-size:.9rem">Enter the passcode to view class results, the diagnostic dashboard, and the answer key.</p>
+      <input type="text" id="pc" placeholder="Passcode" style="text-align:center">
+      <div class="row" style="justify-content:center">
+        <button class="btn primary" id="pcGo">Enter</button>
+        <button class="btn ghost" id="pcBack">← Back to test</button>
+      </div>
+      <p class="muted" style="font-size:.76rem">Default passcode: <strong>${esc(META.passcode)}</strong> — change it in the file's META block before sharing with students.</p>
+    </div>`;
+    document.getElementById('themeBtn').onclick=toggleTheme;
+    const go=()=>{if(document.getElementById('pc').value.trim().toLowerCase()===META.passcode.toLowerCase()){S.teacherOk=true;renderTeacher();}else alert('Incorrect passcode.');};
+    document.getElementById('pcGo').onclick=go;
+    document.getElementById('pc').onkeydown=e=>{if(e.key==='Enter')go();};
+    document.getElementById('pcBack').onclick=()=>{S.view='start';render();};
+    return;
+  }
+  const tabs=[['overview','Class overview'],['standards','Standard mastery'],['students','Students'],['growth','Growth (Pre→Post)'],['reteach','Grouping & reteach'],['data','Data'],['key','Answer key']];
+  app.innerHTML=masthead()+`
+    <div class="spread" style="margin-bottom:14px">
+      <div class="tabs">${tabs.map(t=>`<button class="tab" role="tab" aria-selected="${S.teacherTab===t[0]}" data-t="${t[0]}">${t[1]}</button>`).join('')}</div>
+      <button class="btn ghost sm" id="exitT">← Exit to test</button>
+    </div>
+    <div id="tbody"></div>`;
+  document.getElementById('themeBtn').onclick=toggleTheme;
+  document.getElementById('exitT').onclick=()=>{S.view='start';render();};
+  document.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{S.teacherTab=b.dataset.t;renderTeacher();});
+  const body=document.getElementById('tbody');
+  const A=loadAttempts();
+  if(!A.length && !['data','key'].includes(S.teacherTab)){
+    body.innerHTML=`<div class="card empty"><h3 style="font-size:1.1rem">No results yet</h3><p>Results appear here after students submit on this device, or after you import a class CSV from the <strong>Data</strong> tab.</p></div>`;
+    return;
+  }
+  const T=S.teacherTab;
+  if(T==='overview')body.innerHTML=tOverview(A);
+  else if(T==='standards')body.innerHTML=tStandards(A);
+  else if(T==='students')tStudents(A,body);
+  else if(T==='growth')body.innerHTML=tGrowth(A);
+  else if(T==='reteach')body.innerHTML=tReteach(A);
+  else if(T==='data')tData(body);
+  else if(T==='key')body.innerHTML=tKey();
+}
+
+function scored(A){return A.map(a=>({a,s:scoreAttempt(a.answers)}));}
+
+function tOverview(A){
+  const sc=scored(A); const n=sc.length;
+  const avg=Math.round(sc.reduce((x,y)=>x+y.s.pct,0)/n);
+  const counts={Beginning:0,Developing:0,Proficient:0,Distinguished:0};
+  sc.forEach(x=>counts[x.s.band]++);
+  const preN=A.filter(a=>a.mode==='Pre').length, postN=A.filter(a=>a.mode==='Post').length;
+  const bandColors={Beginning:'var(--beginning)',Developing:'var(--developing)',Proficient:'var(--proficient)',Distinguished:'var(--distinguished)'};
+  const dist=Object.keys(counts).map(k=>counts[k]?`<span style="flex:${counts[k]};background:${bandColors[k]}" title="${k}: ${counts[k]}">${counts[k]}</span>`:'').join('');
+  // weakest domains across class
+  const dd=META.domains.map(d=>{let c=0,t=0;sc.forEach(x=>{c+=x.s.byDomain[d.name].c;t+=x.s.byDomain[d.name].n;});return {name:d.name,pct:t?Math.round(c/t*100):0};}).sort((a,b)=>a.pct-b.pct);
+  return `<div class="stat-grid">
+    <div class="card stat"><div class="k">Attempts recorded</div><div class="v tnum">${n}</div><div class="d">${preN} pre · ${postN} post</div></div>
+    <div class="card stat"><div class="k">Class average</div><div class="v tnum">${avg}%</div><div class="d">${bandFor(avg).key} range</div></div>
+    <div class="card stat"><div class="k">Strongest area</div><div class="v" style="font-size:1.15rem;font-family:var(--serif)">${esc(dd[dd.length-1].name)}</div><div class="d tnum">${dd[dd.length-1].pct}% correct</div></div>
+    <div class="card stat"><div class="k">Needs most support</div><div class="v" style="font-size:1.15rem;font-family:var(--serif)">${esc(dd[0].name)}</div><div class="d tnum">${dd[0].pct}% correct</div></div>
+  </div>
+  <div class="card" style="padding:20px 22px;margin-bottom:16px">
+    <div class="spread" style="margin-bottom:10px"><h3 style="font-size:1.05rem">Achievement level distribution</h3><span class="muted" style="font-size:.8rem">projected from % correct</span></div>
+    <div class="band-dist">${dist||'<span style="flex:1;background:var(--surface-2);color:var(--ink-soft)">—</span>'}</div>
+    <div class="legend" style="margin-top:10px">
+      <span><i class="dot" style="background:var(--beginning)"></i>Beginning &lt;40%</span>
+      <span><i class="dot" style="background:var(--developing)"></i>Developing 40–59%</span>
+      <span><i class="dot" style="background:var(--proficient)"></i>Proficient 60–79%</span>
+      <span><i class="dot" style="background:var(--distinguished)"></i>Distinguished 80%+</span>
+    </div>
+  </div>
+  <div class="card dombars"><h3 style="font-size:1.05rem">Class accuracy by reporting category</h3>
+    ${dd.slice().sort((a,b)=>META.domains.findIndex(d=>d.name===a.name)-META.domains.findIndex(d=>d.name===b.name)).map(d=>`<div class="dombar"><div class="lab"><span>${esc(d.name)}</span><span class="r tnum">${d.pct}%</span></div><div class="bar"><i style="width:${d.pct}%;background:${mColor(d.pct)}"></i></div></div>`).join('')}
+  </div>`;
+}
+
+function tStandards(A){
+  const sc=scored(A);
+  // per element
+  const stds=[...new Set(ITEMS.map(i=>i.standard))].sort();
+  const rows=stds.map(st=>{
+    let c=0,t=0;sc.forEach(x=>{if(x.s.byStd[st]){c+=x.s.byStd[st].c;t+=x.s.byStd[st].n;}});
+    const p=t?Math.round(c/t*100):0; const nItems=ITEMS.filter(i=>i.standard===st).length;
+    return `<tr><td><strong>${st}</strong></td><td style="white-space:normal;min-width:280px">${esc(META.elements[st]||'')}</td>
+      <td class="tnum">${nItems}</td>
+      <td><div class="cell-m tnum" style="background:${mColor(p)}">${p}%</div></td></tr>`;
+  }).join('');
+  return `<div class="card" style="padding:18px 20px;margin-bottom:14px"><h3 style="font-size:1.05rem">Mastery by standard element</h3>
+    <p class="muted" style="font-size:.85rem;margin:6px 0 0">Class percent correct for each standard. <span style="color:var(--beginning);font-weight:700">Red &lt;50%</span> = reteach · <span style="color:var(--developing);font-weight:700">Amber 50–69%</span> = reinforce · <span style="color:var(--proficient);font-weight:700">Green 70%+</span> = on track.</p></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Std</th><th>Skill</th><th># items</th><th>Class mastery</th></tr></thead>
+    <tbody>${rows}</tbody></table></div>`;
+}
+
+function tStudents(A,body){
+  const sc=scored(A);
+  const rows=sc.map((x,i)=>{
+    const weak=META.domains.map(d=>({n:d.name,p:x.s.byDomain[d.name].n?Math.round(x.s.byDomain[d.name].c/x.s.byDomain[d.name].n*100):0})).filter(o=>o.p<50).map(o=>o.n);
+    return `<tr data-r="${i}" style="cursor:pointer">
+      <td><strong>${esc(x.a.name)}</strong></td><td>${esc(x.a.period||'—')}</td>
+      <td><span class="pill mode-chip">${esc(x.a.mode)}</span></td>
+      <td class="tnum">${x.s.correct}/${x.s.total}</td>
+      <td><div class="cell-m tnum" style="background:${mColor(x.s.pct)}">${x.s.pct}%</div></td>
+      <td><span class="band-tag tag-${bandFor(x.s.pct).tag}" style="font-size:.74rem">${x.s.band}</span></td>
+      <td style="white-space:normal">${weak.length?weak.map(w=>`<span class="chip">${esc(w)}</span>`).join(' '):'<span class="muted">—</span>'}</td>
+    </tr><tr class="detail hidden" data-d="${i}"><td colspan="7" style="background:var(--surface-3)"></td></tr>`;
+  }).join('');
+  body.innerHTML=`<div class="spread" style="margin-bottom:10px"><h3 style="font-size:1.05rem">Individual students</h3>
+    <button class="btn sm" id="expAll">Download all results (CSV)</button></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Name</th><th>Period</th><th>Test</th><th>Raw</th><th>Score</th><th>Level</th><th>Focus areas (&lt;50%)</th></tr></thead>
+    <tbody>${rows}</tbody></table></div>
+  <p class="muted" style="font-size:.82rem;margin-top:10px">Tap a row to see that student's standard-by-standard breakdown.</p>`;
+  document.getElementById('expAll').onclick=()=>downloadCSV(A);
+  body.querySelectorAll('[data-r]').forEach(tr=>tr.onclick=()=>{
+    const i=+tr.dataset.r; const d=body.querySelector(`[data-d="${i}"]`);
+    if(!d.classList.contains('hidden')){d.classList.add('hidden');return;}
+    const x=sc[i];
+    const cells=[...new Set(ITEMS.map(it=>it.standard))].sort().map(st=>{
+      if(!x.s.byStd[st])return''; const o=x.s.byStd[st]; const p=o.n?Math.round(o.c/o.n*100):0;
+      return `<div style="display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px solid var(--line-soft)"><span><strong>${st}</strong> <span class="muted" style="font-size:.82rem">${esc(META.elements[st]||'')}</span></span><span class="tnum" style="font-weight:700;color:${mColor(p)}">${o.c}/${o.n}</span></div>`;
+    }).join('');
+    d.querySelector('td').innerHTML=`<div style="padding:10px 4px"><strong>${esc(x.a.name)}</strong> — ${esc(x.a.mode)}-test · ${fmtDate(x.a.date)} · ${Math.floor(x.a.durationSec/60)}m ${x.a.durationSec%60}s<div style="margin-top:8px">${cells}</div></div>`;
+    d.classList.remove('hidden');
+  });
+}
+
+function tGrowth(A){
+  // pair Pre and Post by name+period, take latest of each
+  const key=a=>`${a.name.toLowerCase()}|${(a.period||'').toLowerCase()}`;
+  const byS={};
+  A.forEach(a=>{const k=key(a);byS[k]=byS[k]||{};const m=a.mode;const cur=byS[k][m];if(!cur||new Date(a.date)>new Date(cur.date))byS[k][m]=a;});
+  const pairs=Object.values(byS).filter(o=>o.Pre&&o.Post);
+  if(!pairs.length)return `<div class="card empty"><h3 style="font-size:1.1rem">No matched pairs yet</h3><p>Growth appears once a student has <strong>both</strong> a pre-test and a post-test recorded (matched by name and period).</p></div>`;
+  const rows=pairs.map(o=>{
+    const pre=scoreAttempt(o.Pre.answers),post=scoreAttempt(o.Post.answers);
+    const delta=post.pct-pre.pct;
+    const dcol=delta>0?'var(--proficient)':delta<0?'var(--beginning)':'var(--ink-soft)';
+    const domCells=META.domains.map(d=>{const a=pre.byDomain[d.name],b=post.byDomain[d.name];const pa=a.n?Math.round(a.c/a.n*100):0,pb=b.n?Math.round(b.c/b.n*100):0;const dd=pb-pa;return `<td class="tnum" style="text-align:center;color:${dd>0?'var(--proficient)':dd<0?'var(--beginning)':'var(--ink-faint)'}">${dd>0?'+':''}${dd}</td>`;}).join('');
+    return `<tr><td><strong>${esc(o.Pre.name)}</strong></td><td>${esc(o.Pre.period||'—')}</td>
+      <td class="tnum" style="text-align:center">${pre.pct}%</td><td class="tnum" style="text-align:center">${post.pct}%</td>
+      <td class="tnum" style="text-align:center;font-weight:800;color:${dcol}">${delta>0?'+':''}${delta}</td>${domCells}</tr>`;
+  }).join('');
+  const avgDelta=Math.round(pairs.reduce((s,o)=>s+(scoreAttempt(o.Post.answers).pct-scoreAttempt(o.Pre.answers).pct),0)/pairs.length);
+  return `<div class="stat-grid"><div class="card stat"><div class="k">Matched students</div><div class="v tnum">${pairs.length}</div></div>
+    <div class="card stat"><div class="k">Average growth</div><div class="v tnum" style="color:${avgDelta>=0?'var(--proficient)':'var(--beginning)'}">${avgDelta>0?'+':''}${avgDelta}</div><div class="d">percentage points</div></div></div>
+  <div class="tablewrap"><table><thead><tr><th>Name</th><th>Period</th><th>Pre</th><th>Post</th><th>Δ Total</th>
+    ${META.domains.map(d=>`<th title="${esc(d.name)}">${esc(d.standards)}</th>`).join('')}</tr></thead>
+    <tbody>${rows}</tbody></table></div>
+  <p class="muted" style="font-size:.82rem;margin-top:10px">Domain columns show the change in percent correct (post minus pre) for each reporting category.</p>`;
+}
+
+function tReteach(A){
+  const sc=scored(A);
+  const groups=META.domains.map(d=>{
+    const students=sc.filter(x=>{const o=x.s.byDomain[d.name];return o.n&&(o.c/o.n)<0.5;}).map(x=>`${x.a.name}${x.a.period?' ('+x.a.period+')':''}`);
+    return {name:d.name,students};
+  }).filter(g=>g.students.length);
+  // also per standard element with 2+ students below
+  const stds=[...new Set(ITEMS.map(i=>i.standard))].sort();
+  const stdGroups=stds.map(st=>{
+    const students=sc.filter(x=>{const o=x.s.byStd[st];return o&&o.n&&(o.c/o.n)<0.5;}).map(x=>x.a.name);
+    return {st,students};
+  }).filter(g=>g.students.length>=2);
+  return `<div class="card" style="padding:18px 20px;margin-bottom:14px"><h3 style="font-size:1.05rem">Small-group instruction lists</h3>
+    <p class="muted" style="font-size:.85rem;margin:6px 0 0">Students scoring below 50% in each area — ready-made groups for targeted reteaching.</p></div>
+  ${groups.length?`<div class="reteach">${groups.map(g=>`<div class="grp"><h4>${esc(g.name)} <span class="muted" style="font-weight:400">· ${g.students.length} student${g.students.length>1?'s':''}</span></h4><div class="chiplist">${g.students.map(s=>`<span class="chip">${esc(s)}</span>`).join('')}</div></div>`).join('')}</div>`
+    :`<div class="card empty">No reporting category has students below 50%. 🎉</div>`}
+  ${stdGroups.length?`<h3 style="font-size:1.02rem;margin:22px 0 10px">By specific standard (2+ students)</h3><div class="reteach">${stdGroups.map(g=>`<div class="grp"><h4>${g.st} — ${esc(META.elements[g.st]||'')}</h4><div class="chiplist">${g.students.map(s=>`<span class="chip">${esc(s)}</span>`).join('')}</div></div>`).join('')}</div>`:''}`;
+}
+
+function tData(body){
+  const A=loadAttempts();
+  body.innerHTML=`<div class="card" style="padding:20px 22px;display:grid;gap:16px">
+    <div><h3 style="font-size:1.05rem">Collect &amp; combine class data</h3>
+    <p class="muted" style="font-size:.88rem;margin:6px 0 0">Attempts submitted on this device are saved automatically (${A.length} stored). To combine results from students' own devices, have each student use <em>Copy results for teacher</em> or <em>Download my results</em>, then paste their rows below to build one class dataset.</p></div>
+    <div class="row">
+      <button class="btn" id="expData" ${A.length?'':'disabled'}>Export all (CSV)</button>
+      <button class="btn ghost" id="clrData" ${A.length?'':'disabled'}>Clear stored data</button>
+    </div>
+    <div><label class="field" style="margin-bottom:6px">Paste student CSV rows (with or without the header line)</label>
+    <textarea id="imp" placeholder="Name,Period,Mode,Date,DurationSec,Score%,Q1,Q2,..."></textarea></div>
+    <div><button class="btn primary" id="impBtn">Import rows</button> <span id="impMsg" class="muted" style="font-size:.85rem"></span></div>
+  </div>`;
+  document.getElementById('expData').onclick=()=>downloadCSV(loadAttempts());
+  document.getElementById('clrData').onclick=()=>{if(confirm('Delete all results stored in this browser? This cannot be undone. (Exported CSV files are not affected.)')){saveAttempts([]);renderTeacher();}};
+  document.getElementById('impBtn').onclick=()=>{const t=document.getElementById('imp').value;if(!t.trim())return;const n=importCSV(t);document.getElementById('impMsg').textContent=`${n} attempt${n===1?'':'s'} imported.`;document.getElementById('imp').value='';setTimeout(renderTeacher,900);};
+}
+
+function tKey(){
+  const rows=ITEMS.map((it,i)=>`<tr><td class="tnum">${i+1}</td><td><strong>${it.standard}</strong></td><td class="tnum">${it.dok}</td>
+    <td style="text-align:center"><span class="pill" style="background:var(--accent-soft);color:var(--accent-strong)">${LETTERS[it.answer]}</span></td>
+    <td style="white-space:normal;min-width:260px">${esc(it.correct_text)}</td></tr>`).join('');
+  const keyseq=ITEMS.map(it=>LETTERS[it.answer]);
+  const counts=LETTERS.map(L=>keyseq.filter(k=>k===L).length);
+  return `<div class="card" style="padding:18px 20px;margin-bottom:14px"><h3 style="font-size:1.05rem">Answer key &amp; item map</h3>
+    <p class="muted" style="font-size:.85rem;margin:6px 0 0">Correct-answer balance — A:${counts[0]} · B:${counts[1]} · C:${counts[2]} · D:${counts[3]}. Keep this tab hidden from students.</p></div>
+  <div class="tablewrap"><table><thead><tr><th>#</th><th>Std</th><th>DOK</th><th>Key</th><th>Correct answer</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+
+/* ---- keyboard: arrow nav during test ---- */
+document.addEventListener('keydown',e=>{
+  if(S.view!=='test')return;
+  if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;
+  if(e.key==='ArrowRight'&&S.idx<ITEMS.length-1){S.idx++;renderTest();}
+  else if(e.key==='ArrowLeft'&&S.idx>0){S.idx--;renderTest();}
+  else if(['1','2','3','4'].includes(e.key)){S.answers[S.idx]=+e.key-1;renderTest();}
+});
+
+render();
+</script>
