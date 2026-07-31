@@ -20,6 +20,9 @@ measure growth. Results break down by standard so instruction can be targeted.
 - **DOK spread** matching the blueprint (L1 18%, L2 57%, L3 25%).
 - **Robust teacher data** — class overview, per-standard mastery heatmap, per-student
   breakdowns, Pre→Post growth, ready-made reteach groups, and CSV export/import.
+- **Optional Google Sheet logging** — send every submission into one Google Sheet via a
+  Google Apps Script endpoint (setup steps and code in the Teacher dashboard → Data tab
+  and `TEACHER_GUIDE.md`).
 - **Balanced answer key** (A/B/C/D = 10 each) with no "longest answer is correct" cue.
 
 ## Getting started

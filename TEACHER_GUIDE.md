@@ -30,7 +30,52 @@ Open the **Teacher dashboard** (button at the bottom of the start screen; defaul
 - **Grouping & reteach** — ready-made small-group lists of the students below 50% in each category and standard.
 - **Data** — export the whole class as one CSV, or paste in rows students submitted from their own devices to combine everything in one place.
 
-> **Collecting from many devices:** attempts are saved automatically in the browser they were taken on. If students test on their own devices, have each use *Download my results* / *Copy results for teacher* and submit the row to you (e.g., via an LMS dropbox); paste all rows into the **Data** tab to rebuild the full class dataset. Change the teacher passcode in the file's `META` block before sharing with students.
+> **Change the teacher passcode** in the file's `META` block before sharing with students.
+
+## 3a. Automatic logging to a Google Sheet (recommended for whole-class data)
+
+Send every submission straight into one Google Sheet — no per-student sign-in, no manual collecting. Each row lands with the score, projected level, per-category percentages, and every answer, so you can sort, filter, and pivot however you like.
+
+**One-time setup (about 5 minutes):**
+
+1. Go to **sheets.new** to create a blank Google Sheet.
+2. **Extensions → Apps Script.** Delete the sample code, paste the script in section 3b below, and click **Save**.
+3. **Deploy → New deployment → Web app.** Set **Execute as: Me** and **Who has access: Anyone**. Click **Deploy** and authorize when prompted.
+4. Copy the **Web app URL** it gives you (ends in `/exec`).
+5. Put that URL into the test — either paste it in the Teacher dashboard → **Data** tab (that device only), or, to cover every student, open `biology-pre-post-diagnostic.html` in a text editor and paste it between the quotes on the line `const SHEET_ENDPOINT = "";` near the top, then share that file.
+6. Use **Send a test row** in the Data tab to confirm a row appears in your sheet.
+
+> **Where it runs:** live logging works from the **downloaded or hosted file** — put it in your LMS, Google Drive/Sites, or open it locally. The claude.ai online preview blocks outside connections for security, so use the actual file for real class logging. Local saving and CSV export always work as a backup either way.
+
+### 3b. Google Apps Script code
+
+```javascript
+// Google Apps Script — paste into your Sheet's Apps Script editor (Extensions > Apps Script)
+// Then Deploy > New deployment > Web app (Execute as: Me, Who has access: Anyone).
+function doPost(e) {
+  var lock = LockService.getScriptLock();
+  lock.waitLock(30000);
+  try {
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sheet = ss.getSheetByName('Results') || ss.insertSheet('Results');
+    var body = JSON.parse(e.postData.contents);
+    if (sheet.getLastRow() === 0 && body.header) {
+      sheet.appendRow(body.header);
+      sheet.setFrozenRows(1);
+    }
+    sheet.appendRow(body.row);
+    return ContentService
+      .createTextOutput(JSON.stringify({ ok: true }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (err) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ ok: false, error: String(err) }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } finally {
+    lock.releaseLock();
+  }
+}
+```
 
 ## 4. Blueprint alignment
 
