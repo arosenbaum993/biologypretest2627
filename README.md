@@ -4,32 +4,33 @@ An online, auto-scoring multiple-choice diagnostic for an 18-week Biology I seme
 course. Give it as a **pre-test** to guide instruction and again as a **post-test** to
 measure growth. Results break down by standard so instruction can be targeted.
 
-## Files
+**Take the test:** https://arosenbaum993.github.io/biologypretest2627/
 
-| File | What it is |
-|---|---|
-| [`biology-pre-post-diagnostic.html`](biology-pre-post-diagnostic.html) | The test students take. Open it in any browser — self-contained, no internet, login, or install required. Auto-scores and reports by standard, with a built-in teacher dashboard. |
-| [`TEACHER_GUIDE.md`](TEACHER_GUIDE.md) | Administration instructions, data-collection guide, blueprint alignment, and the full answer key + item map. |
-| [`item-bank.json`](item-bank.json) | Raw item data (stems, options, key, standard, DOK) for reuse or import into another platform. |
+## About
 
-## Highlights
-
-- **40 items** weighted to the Georgia Milestones Biology EOC blueprint: Cells 20%,
+- **40 questions** weighted to the Georgia Milestones Biology EOC blueprint: Cells 20%,
   Cellular Genetics & Heredity 23%, Classification & Phylogeny 13%, Ecology 27%,
   Theory of Evolution 17%.
 - **DOK spread** matching the blueprint (L1 18%, L2 57%, L3 25%).
-- **Robust teacher data** — class overview, per-standard mastery heatmap, per-student
-  breakdowns, Pre→Post growth, ready-made reteach groups, and CSV export/import.
-- **Optional Google Sheet logging** — send every submission into one Google Sheet via a
-  Google Apps Script endpoint (setup steps and code in the Teacher dashboard → Data tab
-  and `TEACHER_GUIDE.md`).
-- **Balanced answer key** (A/B/C/D = 10 each) with no "longest answer is correct" cue.
+- **Auto-scoring** with a built-in teacher dashboard: class overview, per-standard
+  mastery heatmap, per-student breakdowns, Pre→Post growth, ready-made reteach groups,
+  and CSV export/import.
+- **Optional Google Sheet logging** — send every submission into one private Google
+  Sheet via a Google Apps Script endpoint (setup lives in the teacher dashboard →
+  Data tab).
 
-## Getting started
+## Hosting it for students (GitHub Pages)
 
-1. Open `biology-pre-post-diagnostic.html` and share it with students (LMS, Google
-   Classroom, shared drive, or a local file).
-2. Students enter their name and period, pick **Pre-Test** or **Post-Test**, and begin.
-3. Open the **Teacher dashboard** from the start screen (default passcode `biology` —
-   change it in the file's `META` block before sharing). See `TEACHER_GUIDE.md` for
-   details on combining results collected across multiple devices.
+1. **Settings → Pages → Source: "Deploy from a branch" → Branch: `main` / `/ (root)` → Save.**
+2. Wait ~1 minute, then share the address above with students.
+
+Because it's served as a real web page, the Google Sheet logging works from the Pages
+URL. Students only ever see the test — the correct answers are not shown to them, and the
+teacher dashboard is passcode-gated.
+
+## For teachers
+
+The teacher guide (administration, data setup, and the full answer key) and the raw item
+bank are kept **out of this public repository** so the answer key isn't exposed to
+students. They're delivered to the teacher separately. Change the dashboard passcode in
+the file's `META` block before sharing the link.
