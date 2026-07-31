@@ -1,0 +1,688 @@
+{
+  "course": "Biology I (26.01200)",
+  "standard_set": "Georgia Standards of Excellence",
+  "aligned_to": "Georgia Milestones Biology EOC blueprint",
+  "item_count": 40,
+  "items": [
+    {
+      "number": 1,
+      "id": "Q1",
+      "domain": "Cells",
+      "standard": "SB1.a",
+      "dok": 1,
+      "stem": "Which organelle is the primary site of cellular respiration, releasing energy the cell can use?",
+      "options": [
+        "Mitochondrion",
+        "Ribosome",
+        "Golgi apparatus",
+        "Vacuole"
+      ],
+      "answer_index": 0,
+      "answer_letter": "A",
+      "answer_text": "Mitochondrion"
+    },
+    {
+      "number": 2,
+      "id": "Q2",
+      "domain": "Cells",
+      "standard": "SB1.a",
+      "dok": 2,
+      "stem": "A cell's membrane controls what enters and leaves, its ribosomes build proteins, and its mitochondria supply energy. This coordinated activity best shows how organelles \u2014",
+      "options": [
+        "compete with one another for limited space",
+        "work together as a system to maintain homeostasis",
+        "each carry out every cell function independently",
+        "function only during cell division"
+      ],
+      "answer_index": 1,
+      "answer_letter": "B",
+      "answer_text": "work together as a system to maintain homeostasis"
+    },
+    {
+      "number": 3,
+      "id": "Q3",
+      "domain": "Cells",
+      "standard": "SB1.b",
+      "dok": 2,
+      "stem": "How does mitosis differ from meiosis?",
+      "options": [
+        "Meiosis produces two cells identical to the parent cell",
+        "Mitosis produces four unique gametes used for reproduction",
+        "Mitosis makes identical cells; meiosis makes varied gametes",
+        "Both processes always produce cells with doubled chromosome numbers"
+      ],
+      "answer_index": 2,
+      "answer_letter": "C",
+      "answer_text": "Mitosis makes identical cells; meiosis makes varied gametes"
+    },
+    {
+      "number": 4,
+      "id": "Q4",
+      "domain": "Cells",
+      "standard": "SB1.b",
+      "dok": 2,
+      "stem": "Binary fission in bacteria and mitosis in your skin cells both maintain genetic continuity because each \u2014",
+      "options": [
+        "reduces the chromosome number by half each cycle",
+        "requires two parent organisms in order to occur",
+        "copies the DNA so the new cells match the parent",
+        "produces gametes that are later used in fertilization"
+      ],
+      "answer_index": 2,
+      "answer_letter": "C",
+      "answer_text": "copies the DNA so the new cells match the parent"
+    },
+    {
+      "number": 5,
+      "id": "Q5",
+      "domain": "Cells",
+      "standard": "SB1.c",
+      "dok": 1,
+      "stem": "Which type of macromolecule stores hereditary information and directs protein synthesis?",
+      "options": [
+        "Nucleic acid",
+        "Carbohydrate",
+        "Lipid",
+        "Phospholipid"
+      ],
+      "answer_index": 0,
+      "answer_letter": "A",
+      "answer_text": "Nucleic acid"
+    },
+    {
+      "number": 6,
+      "id": "Q6",
+      "domain": "Cells",
+      "standard": "SB1.d",
+      "dok": 3,
+      "stem": "A freshwater plant cell is placed in very salty water. What will happen to the water in the cell?",
+      "options": [
+        "Water will move into the cell, causing it to swell",
+        "Water will stay balanced because the cell is isotonic",
+        "Water will move out of the cell, causing it to shrink",
+        "Water will stop moving across the membrane entirely"
+      ],
+      "answer_index": 2,
+      "answer_letter": "C",
+      "answer_text": "Water will move out of the cell, causing it to shrink"
+    },
+    {
+      "number": 7,
+      "id": "Q7",
+      "domain": "Cells",
+      "standard": "SB1.d",
+      "dok": 2,
+      "stem": "Which process moves molecules from an area of high concentration to low concentration WITHOUT using cellular energy?",
+      "options": [
+        "Active transport",
+        "Endocytosis",
+        "Exocytosis",
+        "Diffusion"
+      ],
+      "answer_index": 3,
+      "answer_letter": "D",
+      "answer_text": "Diffusion"
+    },
+    {
+      "number": 8,
+      "id": "Q8",
+      "domain": "Cells",
+      "standard": "SB1.e",
+      "dok": 2,
+      "stem": "Which statement best describes the relationship between photosynthesis and cellular respiration?",
+      "options": [
+        "Both processes release oxygen as a waste product",
+        "The products of one process are the reactants of the other",
+        "Both processes occur only in animal cells",
+        "Respiration stores energy while photosynthesis releases it"
+      ],
+      "answer_index": 1,
+      "answer_letter": "B",
+      "answer_text": "The products of one process are the reactants of the other"
+    },
+    {
+      "number": 9,
+      "id": "Q9",
+      "domain": "Cellular Genetics & Heredity",
+      "standard": "SB2.a",
+      "dok": 1,
+      "stem": "The repeating subunits (monomers) that make up a molecule of DNA are called \u2014",
+      "options": [
+        "nucleotides",
+        "amino acids",
+        "fatty acids",
+        "monosaccharides"
+      ],
+      "answer_index": 0,
+      "answer_letter": "A",
+      "answer_text": "nucleotides"
+    },
+    {
+      "number": 10,
+      "id": "Q10",
+      "domain": "Cellular Genetics & Heredity",
+      "standard": "SB2.a",
+      "dok": 2,
+      "stem": "During which process is the information in DNA used to build a molecule of messenger RNA (mRNA)?",
+      "options": [
+        "Replication",
+        "Translation",
+        "Digestion",
+        "Transcription"
+      ],
+      "answer_index": 3,
+      "answer_letter": "D",
+      "answer_text": "Transcription"
+    },
+    {
+      "number": 11,
+      "id": "Q11",
+      "domain": "Cellular Genetics & Heredity",
+      "standard": "SB2.b",
+      "dok": 1,
+      "stem": "A change in the sequence of DNA bases, sometimes caused by radiation or certain chemicals, is called a \u2014",
+      "options": [
+        "fertilization",
+        "dominant trait",
+        "phenotype",
+        "mutation"
+      ],
+      "answer_index": 3,
+      "answer_letter": "D",
+      "answer_text": "mutation"
+    },
+    {
+      "number": 12,
+      "id": "Q12",
+      "domain": "Cellular Genetics & Heredity",
+      "standard": "SB2.b",
+      "dok": 3,
+      "stem": "Crossing over during meiosis increases genetic variation because it \u2014",
+      "options": [
+        "makes exact copies of each chromosome for the gametes",
+        "swaps segments between homologous chromosomes",
+        "lowers the total number of genes found in a cell",
+        "stops fertilization from being able to take place"
+      ],
+      "answer_index": 1,
+      "answer_letter": "B",
+      "answer_text": "swaps segments between homologous chromosomes"
+    },
+    {
+      "number": 13,
+      "id": "Q13",
+      "domain": "Cellular Genetics & Heredity",
+      "standard": "SB2.c",
+      "dok": 2,
+      "stem": "Which is an ethical concern often raised about using biotechnology such as genetically modified crops?",
+      "options": [
+        "Modified crops can never increase how much food is produced",
+        "DNA can never be moved between two different organisms",
+        "The process always removes all genetic variation from crops",
+        "Possible long-term effects on health are still debated"
+      ],
+      "answer_index": 3,
+      "answer_letter": "D",
+      "answer_text": "Possible long-term effects on health are still debated"
+    },
+    {
+      "number": 14,
+      "id": "Q14",
+      "domain": "Cellular Genetics & Heredity",
+      "standard": "SB3.a",
+      "dok": 2,
+      "stem": "Mendel's law of segregation is explained by which event during meiosis?",
+      "options": [
+        "Alleles separating into different gametes",
+        "The copying of all the DNA before the cell divides",
+        "Two gametes joining together during fertilization",
+        "Chromosomes being copied in ordinary body cells"
+      ],
+      "answer_index": 0,
+      "answer_letter": "A",
+      "answer_text": "Alleles separating into different gametes"
+    },
+    {
+      "number": 15,
+      "id": "Q15",
+      "domain": "Cellular Genetics & Heredity",
+      "standard": "SB3.b",
+      "dok": 2,
+      "stem": "In pea plants, tall (T) is dominant to short (t). If two Tt plants are crossed, what fraction of the offspring are expected to be short?",
+      "options": [
+        "0 (none)",
+        "1/4",
+        "1/2",
+        "3/4"
+      ],
+      "answer_index": 1,
+      "answer_letter": "B",
+      "answer_text": "1/4"
+    },
+    {
+      "number": 16,
+      "id": "Q16",
+      "domain": "Cellular Genetics & Heredity",
+      "standard": "SB3.b",
+      "dok": 3,
+      "stem": "In four-o'clock flowers, red (R) and white (W) alleles show incomplete dominance, so RW plants are pink. Crossing two pink plants gives offspring in about what ratio?",
+      "options": [
+        "all pink",
+        "1 red : 2 pink : 1 white",
+        "3 red : 1 white",
+        "all red"
+      ],
+      "answer_index": 1,
+      "answer_letter": "B",
+      "answer_text": "1 red : 2 pink : 1 white"
+    },
+    {
+      "number": 17,
+      "id": "Q17",
+      "domain": "Cellular Genetics & Heredity",
+      "standard": "SB3.c",
+      "dok": 2,
+      "stem": "Which is an advantage of asexual reproduction compared with sexual reproduction?",
+      "options": [
+        "It produces much greater genetic variation",
+        "A single parent can reproduce quickly",
+        "Offspring are better able to adapt to change",
+        "It requires two parents and more total energy"
+      ],
+      "answer_index": 1,
+      "answer_letter": "B",
+      "answer_text": "A single parent can reproduce quickly"
+    },
+    {
+      "number": 18,
+      "id": "Q18",
+      "domain": "Classification & Phylogeny",
+      "standard": "SB4.a",
+      "dok": 2,
+      "stem": "The theory of endosymbiosis explains the origin of mitochondria and chloroplasts by proposing that they \u2014",
+      "options": [
+        "developed from inward folds of the cell membrane over time",
+        "split off from the cell's nucleus a very long time ago",
+        "were once free-living bacteria taken in by a host cell",
+        "are built only out of nucleic acids"
+      ],
+      "answer_index": 2,
+      "answer_letter": "C",
+      "answer_text": "were once free-living bacteria taken in by a host cell"
+    },
+    {
+      "number": 19,
+      "id": "Q19",
+      "domain": "Classification & Phylogeny",
+      "standard": "SB4.a",
+      "dok": 1,
+      "stem": "Which group of organisms is made of cells that LACK a membrane-bound nucleus?",
+      "options": [
+        "Animals",
+        "Plants",
+        "Bacteria",
+        "Fungi"
+      ],
+      "answer_index": 2,
+      "answer_letter": "C",
+      "answer_text": "Bacteria"
+    },
+    {
+      "number": 20,
+      "id": "Q20",
+      "domain": "Classification & Phylogeny",
+      "standard": "SB4.b",
+      "dok": 3,
+      "stem": "On a cladogram, two species whose branches share the most recent common ancestor are \u2014",
+      "options": [
+        "the most distantly related",
+        "unrelated to all other species",
+        "identical in every trait",
+        "the most closely related"
+      ],
+      "answer_index": 3,
+      "answer_letter": "D",
+      "answer_text": "the most closely related"
+    },
+    {
+      "number": 21,
+      "id": "Q21",
+      "domain": "Classification & Phylogeny",
+      "standard": "SB4.c",
+      "dok": 2,
+      "stem": "Why do many scientists argue that viruses are NOT truly living organisms?",
+      "options": [
+        "They contain genetic material",
+        "They are made of proteins",
+        "They cannot reproduce without a host cell",
+        "They are able to cause diseases"
+      ],
+      "answer_index": 2,
+      "answer_letter": "C",
+      "answer_text": "They cannot reproduce without a host cell"
+    },
+    {
+      "number": 22,
+      "id": "Q22",
+      "domain": "Classification & Phylogeny",
+      "standard": "SB4.b",
+      "dok": 2,
+      "stem": "Two species are found to have very similar DNA and protein sequences. This is best used as evidence that they \u2014",
+      "options": [
+        "live in the same habitat",
+        "share a common ancestor",
+        "are the same species",
+        "do not evolve at all"
+      ],
+      "answer_index": 1,
+      "answer_letter": "B",
+      "answer_text": "share a common ancestor"
+    },
+    {
+      "number": 23,
+      "id": "Q23",
+      "domain": "Ecology",
+      "standard": "SB5.a",
+      "dok": 1,
+      "stem": "The largest population size that an environment can support over time is called its \u2014",
+      "options": [
+        "carrying capacity",
+        "biodiversity",
+        "keystone species",
+        "limiting factor"
+      ],
+      "answer_index": 0,
+      "answer_letter": "A",
+      "answer_text": "carrying capacity"
+    },
+    {
+      "number": 24,
+      "id": "Q24",
+      "domain": "Ecology",
+      "standard": "SB5.a",
+      "dok": 2,
+      "stem": "Which is a density-dependent limiting factor for a growing deer population?",
+      "options": [
+        "Disease spreading as the population grows",
+        "An unusually severe drought during the winter",
+        "A fast-moving forest fire in the area",
+        "A sudden drop in the outdoor temperature"
+      ],
+      "answer_index": 0,
+      "answer_letter": "A",
+      "answer_text": "Disease spreading as the population grows"
+    },
+    {
+      "number": 25,
+      "id": "Q25",
+      "domain": "Ecology",
+      "standard": "SB5.a",
+      "dok": 2,
+      "stem": "A keystone species is best described as one that \u2014",
+      "options": [
+        "is the single largest organism found in its ecosystem",
+        "is always the top predator in a food web",
+        "simply lives longer than the other species do",
+        "strongly affects its ecosystem despite low numbers"
+      ],
+      "answer_index": 3,
+      "answer_letter": "D",
+      "answer_text": "strongly affects its ecosystem despite low numbers"
+    },
+    {
+      "number": 26,
+      "id": "Q26",
+      "domain": "Ecology",
+      "standard": "SB5.b",
+      "dok": 2,
+      "stem": "In an energy pyramid, the amount of energy available at each higher level \u2014",
+      "options": [
+        "decreases",
+        "increases",
+        "stays exactly the same",
+        "disappears completely"
+      ],
+      "answer_index": 0,
+      "answer_letter": "A",
+      "answer_text": "decreases"
+    },
+    {
+      "number": 27,
+      "id": "Q27",
+      "domain": "Ecology",
+      "standard": "SB5.b",
+      "dok": 3,
+      "stem": "A disease kills most of the producers in a food web. What is the most immediate effect on the primary consumers?",
+      "options": [
+        "They increase rapidly in number",
+        "They become producers themselves",
+        "They lose their main source of food",
+        "They gain more available energy"
+      ],
+      "answer_index": 2,
+      "answer_letter": "C",
+      "answer_text": "They lose their main source of food"
+    },
+    {
+      "number": 28,
+      "id": "Q28",
+      "domain": "Ecology",
+      "standard": "SB5.b",
+      "dok": 2,
+      "stem": "Which statement best explains why decomposers are essential in an ecosystem?",
+      "options": [
+        "They make most of the oxygen in the air",
+        "They give energy directly to the sun",
+        "They keep matter from cycling at all",
+        "They return nutrients to the soil"
+      ],
+      "answer_index": 3,
+      "answer_letter": "D",
+      "answer_text": "They return nutrients to the soil"
+    },
+    {
+      "number": 29,
+      "id": "Q29",
+      "domain": "Ecology",
+      "standard": "SB5.c",
+      "dok": 3,
+      "stem": "A greater variety of species (high biodiversity) usually makes an ecosystem more stable because it \u2014",
+      "options": [
+        "prevents any change from ever occurring",
+        "guarantees that no species will ever go extinct",
+        "removes all competition among the organisms",
+        "provides more ways to recover from disturbance"
+      ],
+      "answer_index": 3,
+      "answer_letter": "D",
+      "answer_text": "provides more ways to recover from disturbance"
+    },
+    {
+      "number": 30,
+      "id": "Q30",
+      "domain": "Ecology",
+      "standard": "SB5.d",
+      "dok": 2,
+      "stem": "Which human action would most directly REDUCE the negative impact of humans on the environment?",
+      "options": [
+        "Clearing large areas of forest for new farmland",
+        "Releasing a non-native fish into a lake",
+        "Restoring wetlands and native plants",
+        "Burning more fossil fuels to produce energy"
+      ],
+      "answer_index": 2,
+      "answer_letter": "C",
+      "answer_text": "Restoring wetlands and native plants"
+    },
+    {
+      "number": 31,
+      "id": "Q31",
+      "domain": "Ecology",
+      "standard": "SB5.d",
+      "dok": 2,
+      "stem": "Introducing a non-native (invasive) species to an ecosystem often reduces biodiversity because the invader \u2014",
+      "options": [
+        "almost always dies off very quickly",
+        "increases the food supply for every species",
+        "has many natural predators already present",
+        "outcompetes native species for resources"
+      ],
+      "answer_index": 3,
+      "answer_letter": "D",
+      "answer_text": "outcompetes native species for resources"
+    },
+    {
+      "number": 32,
+      "id": "Q32",
+      "domain": "Ecology",
+      "standard": "SB5.e",
+      "dok": 2,
+      "stem": "An organism is MOST likely to survive an environmental change if it \u2014",
+      "options": [
+        "completely stops reproducing during the change",
+        "can tolerate the new conditions with its traits",
+        "carries no genetic variation at all in its population",
+        "happens to be the largest member of its species"
+      ],
+      "answer_index": 1,
+      "answer_letter": "B",
+      "answer_text": "can tolerate the new conditions with its traits"
+    },
+    {
+      "number": 33,
+      "id": "Q33",
+      "domain": "Ecology",
+      "standard": "SB5.a",
+      "dok": 3,
+      "stem": "A population grows quickly and then levels off near a steady size. The leveling off happens because the population has \u2014",
+      "options": [
+        "run out of every resource all at once",
+        "no limiting factors acting on it",
+        "permanently stopped reproducing",
+        "reached its carrying capacity"
+      ],
+      "answer_index": 3,
+      "answer_letter": "D",
+      "answer_text": "reached its carrying capacity"
+    },
+    {
+      "number": 34,
+      "id": "Q34",
+      "domain": "Theory of Evolution",
+      "standard": "SB6.a",
+      "dok": 2,
+      "stem": "New understandings of Earth's great age and the fossil record influenced biology mainly by \u2014",
+      "options": [
+        "supporting the idea that species change over time",
+        "proving that species can never change at all",
+        "showing that Earth is only a few thousand years old",
+        "disproving everything that is known about genetics"
+      ],
+      "answer_index": 0,
+      "answer_letter": "A",
+      "answer_text": "supporting the idea that species change over time"
+    },
+    {
+      "number": 35,
+      "id": "Q35",
+      "domain": "Theory of Evolution",
+      "standard": "SB6.b",
+      "dok": 1,
+      "stem": "Speciation, the formation of new species over time, tends to increase an area's \u2014",
+      "options": [
+        "extinction rate only",
+        "biodiversity",
+        "age of the Earth",
+        "average body size"
+      ],
+      "answer_index": 1,
+      "answer_letter": "B",
+      "answer_text": "biodiversity"
+    },
+    {
+      "number": 36,
+      "id": "Q36",
+      "domain": "Theory of Evolution",
+      "standard": "SB6.c",
+      "dok": 2,
+      "stem": "The forelimbs of humans, whales, and bats all share the same basic bone arrangement. These homologous structures are evidence of \u2014",
+      "options": [
+        "identical environments",
+        "common ancestry",
+        "completely different genetic codes",
+        "unrelated origins"
+      ],
+      "answer_index": 1,
+      "answer_letter": "B",
+      "answer_text": "common ancestry"
+    },
+    {
+      "number": 37,
+      "id": "Q37",
+      "domain": "Theory of Evolution",
+      "standard": "SB6.c",
+      "dok": 3,
+      "stem": "Which additional finding would BEST support the claim that two species share a common ancestor?",
+      "options": [
+        "They have very similar DNA and protein sequences",
+        "They happen to live on the same continent",
+        "They are about the same color",
+        "They are hunted by the same predator"
+      ],
+      "answer_index": 0,
+      "answer_letter": "A",
+      "answer_text": "They have very similar DNA and protein sequences"
+    },
+    {
+      "number": 38,
+      "id": "Q38",
+      "domain": "Theory of Evolution",
+      "standard": "SB6.d",
+      "dok": 3,
+      "stem": "Genetic drift differs from natural selection because genetic drift \u2014",
+      "options": [
+        "changes allele frequencies by chance",
+        "always improves an organism's survival",
+        "occurs only in very large populations",
+        "never changes a population at all"
+      ],
+      "answer_index": 0,
+      "answer_letter": "A",
+      "answer_text": "changes allele frequencies by chance"
+    },
+    {
+      "number": 39,
+      "id": "Q39",
+      "domain": "Theory of Evolution",
+      "standard": "SB6.e",
+      "dok": 3,
+      "stem": "Repeated use of an antibiotic can produce a resistant bacterial population because the antibiotic \u2014",
+      "options": [
+        "causes the bacteria to mutate on purpose each time",
+        "teaches the bacteria how to become stronger",
+        "lets resistant bacteria survive and reproduce",
+        "has no real effect on the bacteria at all"
+      ],
+      "answer_index": 2,
+      "answer_letter": "C",
+      "answer_text": "lets resistant bacteria survive and reproduce"
+    },
+    {
+      "number": 40,
+      "id": "Q40",
+      "domain": "Theory of Evolution",
+      "standard": "SB6.e",
+      "dok": 2,
+      "stem": "In natural selection, which individuals are most likely to pass their traits to the next generation?",
+      "options": [
+        "The largest individuals in the group",
+        "The youngest individuals in the group",
+        "Those best suited to their environment",
+        "Those that reproduce the least often"
+      ],
+      "answer_index": 2,
+      "answer_letter": "C",
+      "answer_text": "Those best suited to their environment"
+    }
+  ]
+}
