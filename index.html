@@ -196,6 +196,24 @@ textarea{width:100%;min-height:120px;font-family:var(--mono);font-size:.82rem;bo
 .footer{margin-top:36px;font-size:.78rem;color:var(--ink-faint);text-align:center;line-height:1.6}
 .modal-bg{position:fixed;inset:0;background:rgba(10,18,12,.5);display:grid;place-items:center;padding:20px;z-index:50}
 .modal{max-width:440px;width:100%;padding:24px;display:grid;gap:14px}
+/* ---- item-type controls ---- */
+.qhint{font-size:.8rem;font-weight:700;letter-spacing:.02em;color:var(--accent-strong);background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 25%,transparent);border-radius:8px;padding:7px 12px;display:inline-block;justify-self:start}
+.svgwrap{background:var(--surface-3);border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px;color:var(--ink);display:flex;justify-content:center;overflow-x:auto}
+.svgwrap svg{width:100%;max-width:360px;height:auto}
+.opt.check{align-items:center}
+.opt.check .box{flex:0 0 auto;width:24px;height:24px;border-radius:6px;border:2px solid var(--line);display:grid;place-items:center;font-weight:800;font-size:.9rem;color:var(--on-accent);background:var(--surface)}
+.opt.check.sel .box{background:var(--accent);border-color:var(--accent)}
+.dropsentence{font-size:1.05rem;line-height:2.1;font-family:var(--serif)}
+.ddrop{font-family:var(--sans);font-size:.95rem;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:5px 8px;margin:0 3px;vertical-align:baseline}
+.ddrop.set{border-color:var(--accent);background:var(--accent-soft);color:var(--accent-strong);font-weight:600}
+.orderlist{list-style:none;margin:0;padding:0;display:grid;gap:9px;counter-reset:none}
+.orderitem{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:var(--radius-sm);padding:11px 13px;background:var(--surface)}
+.orderitem .onum{flex:0 0 auto;width:26px;height:26px;border-radius:7px;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-weight:800;font-size:.85rem}
+.orderitem .olabel{flex:1}
+.orderitem .obtns{display:flex;gap:5px}
+.obtn{width:34px;height:30px;border:1px solid var(--line);background:var(--surface);border-radius:7px;cursor:pointer;color:var(--ink);font-size:.8rem;line-height:1}
+.obtn:hover:not(:disabled){border-color:var(--accent)}
+.obtn:disabled{opacity:.35;cursor:not-allowed}
 @media (max-width:640px){
   .form-grid{grid-template-columns:1fr}
   .hero{padding:24px}
@@ -207,7 +225,7 @@ textarea{width:100%;min-height:120px;font-family:var(--mono);font-size:.82rem;bo
 
 <div class="wrap" id="app"></div>
 
-<script id="ITEMS" type="application/json">[{"id": "Q1", "domain": "Cells", "standard": "SB1.a", "dok": 1, "stem": "Which organelle is the primary site of cellular respiration, releasing energy the cell can use?", "options": ["Mitochondrion", "Ribosome", "Golgi apparatus", "Vacuole"]}, {"id": "Q2", "domain": "Cells", "standard": "SB1.a", "dok": 2, "stem": "A cell's membrane controls what enters and leaves, its ribosomes build proteins, and its mitochondria supply energy. This coordinated activity best shows how organelles \u2014", "options": ["compete with one another for limited space", "work together as a system to maintain homeostasis", "each carry out every cell function independently", "function only during cell division"]}, {"id": "Q3", "domain": "Cells", "standard": "SB1.b", "dok": 2, "stem": "How does mitosis differ from meiosis?", "options": ["Meiosis produces two cells identical to the parent cell", "Mitosis produces four unique gametes used for reproduction", "Mitosis makes identical cells; meiosis makes varied gametes", "Both processes always produce cells with doubled chromosome numbers"]}, {"id": "Q4", "domain": "Cells", "standard": "SB1.b", "dok": 2, "stem": "Binary fission in bacteria and mitosis in your skin cells both maintain genetic continuity because each \u2014", "options": ["reduces the chromosome number by half each cycle", "requires two parent organisms in order to occur", "copies the DNA so the new cells match the parent", "produces gametes that are later used in fertilization"]}, {"id": "Q5", "domain": "Cells", "standard": "SB1.c", "dok": 1, "stem": "Which type of macromolecule stores hereditary information and directs protein synthesis?", "options": ["Nucleic acid", "Carbohydrate", "Lipid", "Phospholipid"]}, {"id": "Q6", "domain": "Cells", "standard": "SB1.d", "dok": 3, "stem": "A freshwater plant cell is placed in very salty water. What will happen to the water in the cell?", "options": ["Water will move into the cell, causing it to swell", "Water will stay balanced because the cell is isotonic", "Water will move out of the cell, causing it to shrink", "Water will stop moving across the membrane entirely"]}, {"id": "Q7", "domain": "Cells", "standard": "SB1.d", "dok": 2, "stem": "Which process moves molecules from an area of high concentration to low concentration WITHOUT using cellular energy?", "options": ["Active transport", "Endocytosis", "Exocytosis", "Diffusion"]}, {"id": "Q8", "domain": "Cells", "standard": "SB1.e", "dok": 2, "stem": "Which statement best describes the relationship between photosynthesis and cellular respiration?", "options": ["Both processes release oxygen as a waste product", "The products of one process are the reactants of the other", "Both processes occur only in animal cells", "Respiration stores energy while photosynthesis releases it"]}, {"id": "Q9", "domain": "Cellular Genetics & Heredity", "standard": "SB2.a", "dok": 1, "stem": "The repeating subunits (monomers) that make up a molecule of DNA are called \u2014", "options": ["nucleotides", "amino acids", "fatty acids", "monosaccharides"]}, {"id": "Q10", "domain": "Cellular Genetics & Heredity", "standard": "SB2.a", "dok": 2, "stem": "During which process is the information in DNA used to build a molecule of messenger RNA (mRNA)?", "options": ["Replication", "Translation", "Digestion", "Transcription"]}, {"id": "Q11", "domain": "Cellular Genetics & Heredity", "standard": "SB2.b", "dok": 1, "stem": "A change in the sequence of DNA bases, sometimes caused by radiation or certain chemicals, is called a \u2014", "options": ["fertilization", "dominant trait", "phenotype", "mutation"]}, {"id": "Q12", "domain": "Cellular Genetics & Heredity", "standard": "SB2.b", "dok": 3, "stem": "Crossing over during meiosis increases genetic variation because it \u2014", "options": ["makes exact copies of each chromosome for the gametes", "swaps segments between homologous chromosomes", "lowers the total number of genes found in a cell", "stops fertilization from being able to take place"]}, {"id": "Q13", "domain": "Cellular Genetics & Heredity", "standard": "SB2.c", "dok": 2, "stem": "Which is an ethical concern often raised about using biotechnology such as genetically modified crops?", "options": ["Modified crops can never increase how much food is produced", "DNA can never be moved between two different organisms", "The process always removes all genetic variation from crops", "Possible long-term effects on health are still debated"]}, {"id": "Q14", "domain": "Cellular Genetics & Heredity", "standard": "SB3.a", "dok": 2, "stem": "Mendel's law of segregation is explained by which event during meiosis?", "options": ["Alleles separating into different gametes", "The copying of all the DNA before the cell divides", "Two gametes joining together during fertilization", "Chromosomes being copied in ordinary body cells"]}, {"id": "Q15", "domain": "Cellular Genetics & Heredity", "standard": "SB3.b", "dok": 2, "stem": "In pea plants, tall (T) is dominant to short (t). If two Tt plants are crossed, what fraction of the offspring are expected to be short?", "options": ["0 (none)", "1/4", "1/2", "3/4"]}, {"id": "Q16", "domain": "Cellular Genetics & Heredity", "standard": "SB3.b", "dok": 3, "stem": "In four-o'clock flowers, red (R) and white (W) alleles show incomplete dominance, so RW plants are pink. Crossing two pink plants gives offspring in about what ratio?", "options": ["all pink", "1 red : 2 pink : 1 white", "3 red : 1 white", "all red"]}, {"id": "Q17", "domain": "Cellular Genetics & Heredity", "standard": "SB3.c", "dok": 2, "stem": "Which is an advantage of asexual reproduction compared with sexual reproduction?", "options": ["It produces much greater genetic variation", "A single parent can reproduce quickly", "Offspring are better able to adapt to change", "It requires two parents and more total energy"]}, {"id": "Q18", "domain": "Classification & Phylogeny", "standard": "SB4.a", "dok": 2, "stem": "The theory of endosymbiosis explains the origin of mitochondria and chloroplasts by proposing that they \u2014", "options": ["developed from inward folds of the cell membrane over time", "split off from the cell's nucleus a very long time ago", "were once free-living bacteria taken in by a host cell", "are built only out of nucleic acids"]}, {"id": "Q19", "domain": "Classification & Phylogeny", "standard": "SB4.a", "dok": 1, "stem": "Which group of organisms is made of cells that LACK a membrane-bound nucleus?", "options": ["Animals", "Plants", "Bacteria", "Fungi"]}, {"id": "Q20", "domain": "Classification & Phylogeny", "standard": "SB4.b", "dok": 3, "stem": "On a cladogram, two species whose branches share the most recent common ancestor are \u2014", "options": ["the most distantly related", "unrelated to all other species", "identical in every trait", "the most closely related"]}, {"id": "Q21", "domain": "Classification & Phylogeny", "standard": "SB4.c", "dok": 2, "stem": "Why do many scientists argue that viruses are NOT truly living organisms?", "options": ["They contain genetic material", "They are made of proteins", "They cannot reproduce without a host cell", "They are able to cause diseases"]}, {"id": "Q22", "domain": "Classification & Phylogeny", "standard": "SB4.b", "dok": 2, "stem": "Two species are found to have very similar DNA and protein sequences. This is best used as evidence that they \u2014", "options": ["live in the same habitat", "share a common ancestor", "are the same species", "do not evolve at all"]}, {"id": "Q23", "domain": "Ecology", "standard": "SB5.a", "dok": 1, "stem": "The largest population size that an environment can support over time is called its \u2014", "options": ["carrying capacity", "biodiversity", "keystone species", "limiting factor"]}, {"id": "Q24", "domain": "Ecology", "standard": "SB5.a", "dok": 2, "stem": "Which is a density-dependent limiting factor for a growing deer population?", "options": ["Disease spreading as the population grows", "An unusually severe drought during the winter", "A fast-moving forest fire in the area", "A sudden drop in the outdoor temperature"]}, {"id": "Q25", "domain": "Ecology", "standard": "SB5.a", "dok": 2, "stem": "A keystone species is best described as one that \u2014", "options": ["is the single largest organism found in its ecosystem", "is always the top predator in a food web", "simply lives longer than the other species do", "strongly affects its ecosystem despite low numbers"]}, {"id": "Q26", "domain": "Ecology", "standard": "SB5.b", "dok": 2, "stem": "In an energy pyramid, the amount of energy available at each higher level \u2014", "options": ["decreases", "increases", "stays exactly the same", "disappears completely"]}, {"id": "Q27", "domain": "Ecology", "standard": "SB5.b", "dok": 3, "stem": "A disease kills most of the producers in a food web. What is the most immediate effect on the primary consumers?", "options": ["They increase rapidly in number", "They become producers themselves", "They lose their main source of food", "They gain more available energy"]}, {"id": "Q28", "domain": "Ecology", "standard": "SB5.b", "dok": 2, "stem": "Which statement best explains why decomposers are essential in an ecosystem?", "options": ["They make most of the oxygen in the air", "They give energy directly to the sun", "They keep matter from cycling at all", "They return nutrients to the soil"]}, {"id": "Q29", "domain": "Ecology", "standard": "SB5.c", "dok": 3, "stem": "A greater variety of species (high biodiversity) usually makes an ecosystem more stable because it \u2014", "options": ["prevents any change from ever occurring", "guarantees that no species will ever go extinct", "removes all competition among the organisms", "provides more ways to recover from disturbance"]}, {"id": "Q30", "domain": "Ecology", "standard": "SB5.d", "dok": 2, "stem": "Which human action would most directly REDUCE the negative impact of humans on the environment?", "options": ["Clearing large areas of forest for new farmland", "Releasing a non-native fish into a lake", "Restoring wetlands and native plants", "Burning more fossil fuels to produce energy"]}, {"id": "Q31", "domain": "Ecology", "standard": "SB5.d", "dok": 2, "stem": "Introducing a non-native (invasive) species to an ecosystem often reduces biodiversity because the invader \u2014", "options": ["almost always dies off very quickly", "increases the food supply for every species", "has many natural predators already present", "outcompetes native species for resources"]}, {"id": "Q32", "domain": "Ecology", "standard": "SB5.e", "dok": 2, "stem": "An organism is MOST likely to survive an environmental change if it \u2014", "options": ["completely stops reproducing during the change", "can tolerate the new conditions with its traits", "carries no genetic variation at all in its population", "happens to be the largest member of its species"]}, {"id": "Q33", "domain": "Ecology", "standard": "SB5.a", "dok": 3, "stem": "A population grows quickly and then levels off near a steady size. The leveling off happens because the population has \u2014", "options": ["run out of every resource all at once", "no limiting factors acting on it", "permanently stopped reproducing", "reached its carrying capacity"]}, {"id": "Q34", "domain": "Theory of Evolution", "standard": "SB6.a", "dok": 2, "stem": "New understandings of Earth's great age and the fossil record influenced biology mainly by \u2014", "options": ["supporting the idea that species change over time", "proving that species can never change at all", "showing that Earth is only a few thousand years old", "disproving everything that is known about genetics"]}, {"id": "Q35", "domain": "Theory of Evolution", "standard": "SB6.b", "dok": 1, "stem": "Speciation, the formation of new species over time, tends to increase an area's \u2014", "options": ["extinction rate only", "biodiversity", "age of the Earth", "average body size"]}, {"id": "Q36", "domain": "Theory of Evolution", "standard": "SB6.c", "dok": 2, "stem": "The forelimbs of humans, whales, and bats all share the same basic bone arrangement. These homologous structures are evidence of \u2014", "options": ["identical environments", "common ancestry", "completely different genetic codes", "unrelated origins"]}, {"id": "Q37", "domain": "Theory of Evolution", "standard": "SB6.c", "dok": 3, "stem": "Which additional finding would BEST support the claim that two species share a common ancestor?", "options": ["They have very similar DNA and protein sequences", "They happen to live on the same continent", "They are about the same color", "They are hunted by the same predator"]}, {"id": "Q38", "domain": "Theory of Evolution", "standard": "SB6.d", "dok": 3, "stem": "Genetic drift differs from natural selection because genetic drift \u2014", "options": ["changes allele frequencies by chance", "always improves an organism's survival", "occurs only in very large populations", "never changes a population at all"]}, {"id": "Q39", "domain": "Theory of Evolution", "standard": "SB6.e", "dok": 3, "stem": "Repeated use of an antibiotic can produce a resistant bacterial population because the antibiotic \u2014", "options": ["causes the bacteria to mutate on purpose each time", "teaches the bacteria how to become stronger", "lets resistant bacteria survive and reproduce", "has no real effect on the bacteria at all"]}, {"id": "Q40", "domain": "Theory of Evolution", "standard": "SB6.e", "dok": 2, "stem": "In natural selection, which individuals are most likely to pass their traits to the next generation?", "options": ["The largest individuals in the group", "The youngest individuals in the group", "Those best suited to their environment", "Those that reproduce the least often"]}]</script>
+<script id="ITEMS" type="application/json">[{"id": "Q1", "domain": "Cells", "standard": "SB1.a", "dok": 1, "type": "single", "stem": "Which organelle is the primary site of cellular respiration, releasing energy the cell can use?", "options": ["Mitochondrion", "Ribosome", "Golgi apparatus", "Vacuole"]}, {"id": "Q2", "domain": "Cells", "standard": "SB1.a", "dok": 2, "type": "single", "stem": "A cell's membrane controls what enters and leaves, its ribosomes build proteins, and its mitochondria supply energy. This coordinated activity best shows how organelles \u2014", "options": ["compete with one another for limited space", "work together as a system to maintain homeostasis", "each carry out every cell function independently", "function only during cell division"]}, {"id": "Q3", "domain": "Cells", "standard": "SB1.b", "dok": 2, "type": "single", "stem": "How does mitosis differ from meiosis?", "options": ["Meiosis produces two cells identical to the parent cell", "Mitosis produces four unique gametes used for reproduction", "Mitosis makes identical cells; meiosis makes varied gametes", "Both processes always produce cells with doubled chromosome numbers"]}, {"id": "Q4", "domain": "Cells", "standard": "SB1.b", "dok": 2, "type": "single", "stem": "Binary fission in bacteria and mitosis in your skin cells both maintain genetic continuity because each \u2014", "options": ["reduces the chromosome number by half each cycle", "requires two parent organisms in order to occur", "copies the DNA so the new cells match the parent", "produces gametes that are later used in fertilization"]}, {"id": "Q5", "domain": "Cells", "standard": "SB1.c", "dok": 1, "type": "single", "stem": "Which type of macromolecule stores hereditary information and directs protein synthesis?", "options": ["Nucleic acid", "Carbohydrate", "Lipid", "Phospholipid"]}, {"id": "Q6", "domain": "Cells", "standard": "SB1.d", "dok": 3, "type": "single", "stem": "A freshwater plant cell is placed in very salty water. What will happen to the water in the cell?", "options": ["Water will move into the cell, causing it to swell", "Water will stay balanced because the cell is isotonic", "Water will move out of the cell, causing it to shrink", "Water will stop moving across the membrane entirely"]}, {"id": "Q7", "domain": "Cells", "standard": "SB1.d", "dok": 2, "type": "single", "stem": "Which process moves molecules from an area of high concentration to low concentration WITHOUT using cellular energy?", "options": ["Active transport", "Endocytosis", "Exocytosis", "Diffusion"]}, {"id": "Q8", "domain": "Cells", "standard": "SB1.e", "dok": 2, "type": "dropdown", "stem": "Use the drop-down menus to complete the summary of photosynthesis.", "template": "A plant takes in {0} and water. Using energy from sunlight, it makes sugar and releases {1} \u2014 the gas that most living things need to breathe.", "blanks": [{"options": ["oxygen (O\u2082)", "carbon dioxide (CO\u2082)", "nitrogen (N\u2082)"]}, {"options": ["carbon dioxide (CO\u2082)", "oxygen (O\u2082)", "glucose"]}]}, {"id": "Q9", "domain": "Cellular Genetics & Heredity", "standard": "SB2.a", "dok": 1, "type": "single", "stem": "The repeating subunits (monomers) that make up a molecule of DNA are called \u2014", "options": ["nucleotides", "amino acids", "fatty acids", "monosaccharides"]}, {"id": "Q10", "domain": "Cellular Genetics & Heredity", "standard": "SB2.a", "dok": 2, "type": "single", "stem": "During which process is the information in DNA used to build a molecule of messenger RNA (mRNA)?", "options": ["Replication", "Translation", "Digestion", "Transcription"]}, {"id": "Q11", "domain": "Cellular Genetics & Heredity", "standard": "SB2.b", "dok": 1, "type": "single", "stem": "A change in the sequence of DNA bases, sometimes caused by radiation or certain chemicals, is called a \u2014", "options": ["fertilization", "dominant trait", "phenotype", "mutation"]}, {"id": "Q12", "domain": "Cellular Genetics & Heredity", "standard": "SB2.b", "dok": 3, "type": "multi", "stem": "Select ALL of the following that are sources of NEW genetic variation in sexually reproducing organisms.", "options": ["Crossing over during meiosis", "Random mutation of DNA", "Independent assortment of chromosomes", "Mitosis of body cells", "Binary fission in bacteria"]}, {"id": "Q13", "domain": "Cellular Genetics & Heredity", "standard": "SB2.c", "dok": 2, "type": "single", "stem": "Which is an ethical concern often raised about using biotechnology such as genetically modified crops?", "options": ["Modified crops can never increase how much food is produced", "DNA can never be moved between two different organisms", "The process always removes all genetic variation from crops", "Possible long-term effects on health are still debated"]}, {"id": "Q14", "domain": "Cellular Genetics & Heredity", "standard": "SB3.a", "dok": 2, "type": "single", "stem": "Mendel's law of segregation is explained by which event during meiosis?", "options": ["Alleles separating into different gametes", "The copying of all the DNA before the cell divides", "Two gametes joining together during fertilization", "Chromosomes being copied in ordinary body cells"]}, {"id": "Q15", "domain": "Cellular Genetics & Heredity", "standard": "SB3.b", "dok": 2, "type": "single", "stem": "In pea plants, tall (T) is dominant to short (t). If two Tt plants are crossed, what fraction of the offspring are expected to be short?", "options": ["0 (none)", "1/4", "1/2", "3/4"]}, {"id": "Q16", "domain": "Cellular Genetics & Heredity", "standard": "SB3.b", "dok": 3, "type": "single", "stem": "In four-o'clock flowers, red (R) and white (W) alleles show incomplete dominance, so RW plants are pink. Crossing two pink plants gives offspring in about what ratio?", "options": ["all pink", "1 red : 2 pink : 1 white", "3 red : 1 white", "all red"]}, {"id": "Q17", "domain": "Cellular Genetics & Heredity", "standard": "SB3.c", "dok": 2, "type": "single", "stem": "Which is an advantage of asexual reproduction compared with sexual reproduction?", "options": ["It produces much greater genetic variation", "A single parent can reproduce quickly", "Offspring are better able to adapt to change", "It requires two parents and more total energy"]}, {"id": "Q18", "domain": "Classification & Phylogeny", "standard": "SB4.a", "dok": 2, "type": "single", "stem": "The theory of endosymbiosis explains the origin of mitochondria and chloroplasts by proposing that they \u2014", "options": ["developed from inward folds of the cell membrane over time", "split off from the cell's nucleus a very long time ago", "were once free-living bacteria taken in by a host cell", "are built only out of nucleic acids"]}, {"id": "Q19", "domain": "Classification & Phylogeny", "standard": "SB4.a", "dok": 1, "type": "single", "stem": "Which group of organisms is made of cells that LACK a membrane-bound nucleus?", "options": ["Animals", "Plants", "Bacteria", "Fungi"]}, {"id": "Q20", "domain": "Classification & Phylogeny", "standard": "SB4.b", "dok": 3, "type": "single", "stem": "Use the cladogram to answer the question. Which two species share the MOST recent common ancestor?", "options": ["W and X", "Y and Z", "X and Y", "W and Z"], "svg": "<svg viewBox=\"0 0 300 200\" role=\"img\" aria-label=\"Cladogram of four species W, X, Y, and Z\">\n<g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n<path d=\"M20 72 H60 V30 H272\"/>\n<path d=\"M60 72 V72 M60 72 H60\"/>\n<path d=\"M60 72 H60\"/>\n<path d=\"M60 72 V72\"/>\n<path d=\"M60 30 V115 M60 115 H100 V80 H272\"/>\n<path d=\"M100 115 V150 M100 150 H140 V130 H272\"/>\n<path d=\"M140 150 V170 H272\"/>\n</g>\n<g fill=\"currentColor\" font-size=\"14\" font-family=\"Georgia, serif\">\n<text x=\"278\" y=\"34\">W</text><text x=\"278\" y=\"84\">X</text><text x=\"278\" y=\"134\">Y</text><text x=\"278\" y=\"174\">Z</text>\n</g></svg>"}, {"id": "Q21", "domain": "Classification & Phylogeny", "standard": "SB4.c", "dok": 2, "type": "single", "stem": "Why do many scientists argue that viruses are NOT truly living organisms?", "options": ["They contain genetic material", "They are made of proteins", "They cannot reproduce without a host cell", "They are able to cause diseases"]}, {"id": "Q22", "domain": "Classification & Phylogeny", "standard": "SB4.b", "dok": 2, "type": "single", "stem": "Two species are found to have very similar DNA and protein sequences. This is best used as evidence that they \u2014", "options": ["live in the same habitat", "share a common ancestor", "are the same species", "do not evolve at all"]}, {"id": "Q23", "domain": "Ecology", "standard": "SB5.a", "dok": 1, "type": "single", "stem": "The largest population size that an environment can support over time is called its \u2014", "options": ["carrying capacity", "biodiversity", "keystone species", "limiting factor"]}, {"id": "Q24", "domain": "Ecology", "standard": "SB5.a", "dok": 2, "type": "single", "stem": "Which is a density-dependent limiting factor for a growing deer population?", "options": ["Disease spreading as the population grows", "An unusually severe drought during the winter", "A fast-moving forest fire in the area", "A sudden drop in the outdoor temperature"]}, {"id": "Q25", "domain": "Ecology", "standard": "SB5.a", "dok": 2, "type": "single", "stem": "A keystone species is best described as one that \u2014", "options": ["is the single largest organism found in its ecosystem", "is always the top predator in a food web", "simply lives longer than the other species do", "strongly affects its ecosystem despite low numbers"]}, {"id": "Q26", "domain": "Ecology", "standard": "SB5.b", "dok": 3, "type": "order", "stem": "An energy pyramid shows how much energy is available at each feeding level. Put these groups in order from the level with the MOST available energy (1) to the LEAST (4).", "svg": "<svg viewBox=\"0 0 300 170\" role=\"img\" aria-label=\"Energy pyramid with four levels, widest at the bottom\">\n<g stroke=\"currentColor\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.9\">\n<polygon points=\"150,15 178,55 122,55\"/>\n<polygon points=\"120,58 180,58 196,98 104,98\"/>\n<polygon points=\"102,101 198,101 214,141 86,141\"/>\n<polygon points=\"84,144 216,144 232,166 68,166\" transform=\"translate(0,-2)\"/>\n</g>\n<g fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#ahp)\">\n<defs><marker id=\"ahp\" markerWidth=\"9\" markerHeight=\"9\" refX=\"7\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L7 3 L0 6 Z\" fill=\"currentColor\"/></marker></defs>\n<line x1=\"255\" y1=\"160\" x2=\"255\" y2=\"25\"/>\n</g>\n<g fill=\"currentColor\" font-size=\"11\" font-family=\"system-ui, sans-serif\">\n<text x=\"262\" y=\"30\">Least</text><text x=\"262\" y=\"162\">Most</text>\n</g></svg>", "items": ["Producers (grass)", "Primary consumers (grasshoppers)", "Secondary consumers (shrews)", "Tertiary consumers (hawks)"], "start": [2, 0, 3, 1]}, {"id": "Q27", "domain": "Ecology", "standard": "SB5.b", "dok": 3, "type": "multi", "stem": "Use the food web to answer the question. Select ALL organisms that are predators of the mouse (organisms that eat the mouse).", "options": ["Grass", "Grasshopper", "Snake", "Hawk"], "svg": "<svg viewBox=\"0 0 320 235\" role=\"img\" aria-label=\"Food web: grass to grasshopper and mouse; grasshopper and mouse to snake; mouse and snake to hawk\">\n<defs><marker id=\"ah\" markerWidth=\"9\" markerHeight=\"9\" refX=\"7\" refY=\"3\" orient=\"auto\">\n<path d=\"M0 0 L7 3 L0 6 Z\" fill=\"currentColor\"/></marker></defs>\n<g fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" marker-end=\"url(#ah)\" opacity=\"0.85\">\n<line x1=\"150\" y1=\"198\" x2=\"80\" y2=\"158\"/>\n<line x1=\"175\" y1=\"198\" x2=\"230\" y2=\"158\"/>\n<line x1=\"70\" y1=\"132\" x2=\"120\" y2=\"98\"/>\n<line x1=\"222\" y1=\"132\" x2=\"150\" y2=\"98\"/>\n<line x1=\"235\" y1=\"130\" x2=\"222\" y2=\"46\"/>\n<line x1=\"150\" y1=\"74\" x2=\"205\" y2=\"46\"/>\n</g>\n<g font-size=\"12\" font-family=\"system-ui, sans-serif\" text-anchor=\"middle\">\n<g><rect x=\"120\" y=\"200\" width=\"70\" height=\"24\" rx=\"5\" fill=\"none\" stroke=\"currentColor\"/><text x=\"155\" y=\"216\" fill=\"currentColor\">Grass</text></g>\n<g><rect x=\"18\" y=\"134\" width=\"92\" height=\"24\" rx=\"5\" fill=\"none\" stroke=\"currentColor\"/><text x=\"64\" y=\"150\" fill=\"currentColor\">Grasshopper</text></g>\n<g><rect x=\"200\" y=\"134\" width=\"70\" height=\"24\" rx=\"5\" fill=\"none\" stroke=\"currentColor\"/><text x=\"235\" y=\"150\" fill=\"currentColor\">Mouse</text></g>\n<g><rect x=\"105\" y=\"74\" width=\"70\" height=\"24\" rx=\"5\" fill=\"none\" stroke=\"currentColor\"/><text x=\"140\" y=\"90\" fill=\"currentColor\">Snake</text></g>\n<g><rect x=\"185\" y=\"22\" width=\"70\" height=\"24\" rx=\"5\" fill=\"none\" stroke=\"currentColor\"/><text x=\"220\" y=\"38\" fill=\"currentColor\">Hawk</text></g>\n</g></svg>"}, {"id": "Q28", "domain": "Ecology", "standard": "SB5.b", "dok": 2, "type": "single", "stem": "Which statement best explains why decomposers are essential in an ecosystem?", "options": ["They make most of the oxygen in the air", "They give energy directly to the sun", "They keep matter from cycling at all", "They return nutrients to the soil"]}, {"id": "Q29", "domain": "Ecology", "standard": "SB5.c", "dok": 3, "type": "single", "stem": "A greater variety of species (high biodiversity) usually makes an ecosystem more stable because it \u2014", "options": ["prevents any change from ever occurring", "guarantees that no species will ever go extinct", "removes all competition among the organisms", "provides more ways to recover from disturbance"]}, {"id": "Q30", "domain": "Ecology", "standard": "SB5.d", "dok": 2, "type": "single", "stem": "Which human action would most directly REDUCE the negative impact of humans on the environment?", "options": ["Clearing large areas of forest for new farmland", "Releasing a non-native fish into a lake", "Restoring wetlands and native plants", "Burning more fossil fuels to produce energy"]}, {"id": "Q31", "domain": "Ecology", "standard": "SB5.d", "dok": 2, "type": "single", "stem": "Introducing a non-native (invasive) species to an ecosystem often reduces biodiversity because the invader \u2014", "options": ["almost always dies off very quickly", "increases the food supply for every species", "has many natural predators already present", "outcompetes native species for resources"]}, {"id": "Q32", "domain": "Ecology", "standard": "SB5.e", "dok": 2, "type": "single", "stem": "An organism is MOST likely to survive an environmental change if it \u2014", "options": ["completely stops reproducing during the change", "can tolerate the new conditions with its traits", "carries no genetic variation at all in its population", "happens to be the largest member of its species"]}, {"id": "Q33", "domain": "Ecology", "standard": "SB5.a", "dok": 2, "type": "single", "stem": "The graph shows a population over time. The dashed line, where the population levels off, represents the ecosystem\u2019s \u2014", "options": ["biotic potential", "minimum viable population", "exponential growth rate", "carrying capacity"], "svg": "<svg viewBox=\"0 0 300 200\" role=\"img\" aria-label=\"Population size over time rising then leveling off at a dashed line\">\n<g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\">\n<path d=\"M40 20 V170 H285\"/>\n<path d=\"M40 168 C110 165 120 72 285 66\" stroke-width=\"2.5\"/>\n</g>\n<line x1=\"40\" y1=\"66\" x2=\"285\" y2=\"66\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/>\n<g fill=\"currentColor\" font-size=\"12\" font-family=\"system-ui, sans-serif\">\n<text x=\"150\" y=\"190\">Time</text>\n<text x=\"288\" y=\"62\" text-anchor=\"end\" font-style=\"italic\">dashed line</text>\n<text x=\"8\" y=\"100\" transform=\"rotate(-90 12 100)\">Population size</text>\n</g></svg>"}, {"id": "Q34", "domain": "Theory of Evolution", "standard": "SB6.a", "dok": 2, "type": "single", "stem": "New understandings of Earth's great age and the fossil record influenced biology mainly by \u2014", "options": ["supporting the idea that species change over time", "proving that species can never change at all", "showing that Earth is only a few thousand years old", "disproving everything that is known about genetics"]}, {"id": "Q35", "domain": "Theory of Evolution", "standard": "SB6.b", "dok": 1, "type": "single", "stem": "Speciation, the formation of new species over time, tends to increase an area's \u2014", "options": ["extinction rate only", "biodiversity", "age of the Earth", "average body size"]}, {"id": "Q36", "domain": "Theory of Evolution", "standard": "SB6.c", "dok": 2, "type": "single", "stem": "The forelimbs of humans, whales, and bats all share the same basic bone arrangement. These homologous structures are evidence of \u2014", "options": ["identical environments", "common ancestry", "completely different genetic codes", "unrelated origins"]}, {"id": "Q37", "domain": "Theory of Evolution", "standard": "SB6.c", "dok": 3, "type": "single", "stem": "Which additional finding would BEST support the claim that two species share a common ancestor?", "options": ["They have very similar DNA and protein sequences", "They happen to live on the same continent", "They are about the same color", "They are hunted by the same predator"]}, {"id": "Q38", "domain": "Theory of Evolution", "standard": "SB6.d", "dok": 3, "type": "single", "stem": "Genetic drift differs from natural selection because genetic drift \u2014", "options": ["changes allele frequencies by chance", "always improves an organism's survival", "occurs only in very large populations", "never changes a population at all"]}, {"id": "Q39", "domain": "Theory of Evolution", "standard": "SB6.e", "dok": 3, "type": "single", "stem": "Repeated use of an antibiotic can produce a resistant bacterial population because the antibiotic \u2014", "options": ["causes the bacteria to mutate on purpose each time", "teaches the bacteria how to become stronger", "lets resistant bacteria survive and reproduce", "has no real effect on the bacteria at all"]}, {"id": "Q40", "domain": "Theory of Evolution", "standard": "SB6.e", "dok": 2, "type": "single", "stem": "In natural selection, which individuals are most likely to pass their traits to the next generation?", "options": ["The largest individuals in the group", "The youngest individuals in the group", "Those best suited to their environment", "Those that reproduce the least often"]}]</script>
 <script id="META" type="application/json">{"domains": [{"name": "Cells", "standards": "SB1", "pct": 20}, {"name": "Cellular Genetics & Heredity", "standards": "SB2, SB3", "pct": 23}, {"name": "Classification & Phylogeny", "standards": "SB4", "pct": 13}, {"name": "Ecology", "standards": "SB5", "pct": 27}, {"name": "Theory of Evolution", "standards": "SB6", "pct": 17}], "elements": {"SB1.a": "Cell structures/organelles interacting to maintain homeostasis", "SB1.b": "Cellular reproduction (binary fission, mitosis, meiosis) & genetic continuity", "SB1.c": "Macromolecule structure related to function", "SB1.d": "Cellular transport & homeostasis", "SB1.e": "Photosynthesis & respiration: cycling of matter, flow of energy", "SB2.a": "DNA/RNA structure \u2192 replication, transcription, translation", "SB2.b": "Sources of inheritable genetic variation & mutations", "SB2.c": "Biotechnology uses & ethical considerations", "SB3.a": "Mendel's laws & the role of meiosis in variability", "SB3.b": "Patterns of inheritance (Punnett squares, probability)", "SB3.c": "Advantages/disadvantages of sexual vs. asexual reproduction", "SB4.a": "Patterns among clades; origin of eukaryotes by endosymbiosis", "SB4.b": "Cladograms/phylogenetic trees & common ancestry", "SB4.c": "Comparing viruses and organisms", "SB5.a": "Factors affecting biodiversity & populations (carrying capacity, limiting factors, keystone)", "SB5.b": "Cycling of matter & flow of energy (food webs, energy pyramids, cycles)", "SB5.c": "Impact of environmental change on ecosystem stability", "SB5.d": "Reducing human impact on the environment", "SB5.e": "Surviving within changing environmental limits", "SB6.a": "How new understandings shaped our view of biology", "SB6.b": "Patterns in biodiversity from speciation", "SB6.c": "Evidence for common descent (morphology, embryology, biochemistry, genetics)", "SB6.d": "Natural selection & genetic drift (mathematical models)", "SB6.e": "Natural selection & biological resistance"}, "bands": [{"key": "Beginning", "min": 0, "max": 39, "tag": "beginning"}, {"key": "Developing", "min": 40, "max": 59, "tag": "developing"}, {"key": "Proficient", "min": 60, "max": 79, "tag": "proficient"}, {"key": "Distinguished", "min": 80, "max": 100, "tag": "distinguished"}], "passcode": "biology34"}</script>
 <script id="GAS" type="text/plain">// Google Apps Script — paste into your Sheet's Apps Script editor (Extensions > Apps Script).
 // Deploy > New deployment > Web app, with:
@@ -254,16 +272,16 @@ function doPost(e) {
 const ITEMS = JSON.parse(document.getElementById('ITEMS').textContent);
 const META  = JSON.parse(document.getElementById('META').textContent);
 /* Answer key ships obfuscated (not plainly in the page source); restore it here. */
-const KEY_B64 = "PF1OWENVQVBFX0tfTlpDVkFSRVxLXk5YQ1RBUkVeS1xOWENVQVBFXEtfTlhDV0FSRVxLXU5bQ1RBUUVdS15OWENUQVJFXktcTllDV0FQRV06";
+const KEY_B64 = "PF1OWENVQVBFX0tfTlpDPFxOWDJLXU5aQ1RBOVlDVkFQNENUQVJFXktcTlhDVUFQRV5LX05YQ1dBUkVcSzZSRV5LX05aMks2UEVcOkFRRVxLX05aQ1ZBUUVfS1xOWENXQVJFXUtfPw==";
 (function(){
   try{
     var raw=atob(KEY_B64), s="gmbio", o="";
     for(var i=0;i<raw.length;i++){o+=String.fromCharCode(raw.charCodeAt(i)^s.charCodeAt(i%s.length));}
     var k=JSON.parse(o);
-    ITEMS.forEach(function(it,i){it.answer=k[i];it.correct_text=it.options[it.answer];});
+    ITEMS.forEach(function(it,i){it.answer=k[i];});
   }catch(e){console.error('answer key init failed',e);}
 })();
-const LETTERS=['A','B','C','D'];
+const LETTERS=['A','B','C','D','E','F'];
 const STORE_KEY='gm_bio_attempts_v1';
 const ENDPOINT_KEY='gm_bio_endpoint';
 /* ============================================================================
@@ -308,15 +326,38 @@ function fmtDate(iso){const d=new Date(iso);return d.toLocaleDateString(undefine
 function loadAttempts(){try{return JSON.parse(localStorage.getItem(STORE_KEY)||'[]');}catch(e){return[];}}
 function saveAttempts(a){localStorage.setItem(STORE_KEY,JSON.stringify(a));}
 
-/* score a set of answers (array of chosen index or null, aligned to ITEMS order) */
+/* ---------- item-type helpers (single / multi / dropdown / order) ---------- */
+function itype(it){return it.type||'single';}
+function sameSet(a,b){return Array.isArray(a)&&a.length===b.length&&a.slice().sort((x,y)=>x-y).join(',')===b.slice().sort((x,y)=>x-y).join(',');}
+function seqEq(a,b){return Array.isArray(a)&&a.length===b.length&&a.every((v,i)=>v===b[i]);}
+function isCorrect(it,a){
+  if(a==null)return false;
+  switch(itype(it)){
+    case 'multi': return sameSet(a,it.answer);
+    case 'dropdown': return Array.isArray(a)&&it.answer.every((v,b)=>a[b]===v);
+    case 'order': return seqEq(a,it.answer);
+    default: return a===it.answer;
+  }
+}
+function isAnswered(i){
+  const it=ITEMS[i], a=S.answers[i];
+  switch(itype(it)){
+    case 'multi': return Array.isArray(a)&&a.length>0;
+    case 'dropdown': return Array.isArray(a)&&a.length===it.blanks.length&&a.every(x=>x!=null);
+    case 'order': return S.touched.has(i);
+    default: return a!=null;
+  }
+}
+function answeredCount(){let n=0;for(let i=0;i<ITEMS.length;i++)if(isAnswered(i))n++;return n;}
+
+/* score a set of answers (aligned to ITEMS order) */
 function scoreAttempt(answers){
   let correct=0; const byDomain={}, byStd={};
   META.domains.forEach(d=>byDomain[d.name]={c:0,n:0});
   ITEMS.forEach((it,i)=>{
     byStd[it.standard]=byStd[it.standard]||{c:0,n:0,domain:it.domain};
     byDomain[it.domain].n++; byStd[it.standard].n++;
-    const ok = answers[i]!=null && answers[i]===it.answer;
-    if(ok){correct++;byDomain[it.domain].c++;byStd[it.standard].c++;}
+    if(isCorrect(it,answers[i])){correct++;byDomain[it.domain].c++;byStd[it.standard].c++;}
   });
   const pct=Math.round(correct/ITEMS.length*100);
   return {correct,total:ITEMS.length,pct,byDomain,byStd,band:bandFor(pct).key};
@@ -324,7 +365,7 @@ function scoreAttempt(answers){
 
 /* ================= STATE ================= */
 let S={view:'start', student:{name:'',period:''}, mode:'Pre',
-       answers:new Array(ITEMS.length).fill(null), flagged:new Set(),
+       answers:new Array(ITEMS.length).fill(null), flagged:new Set(), touched:new Set(),
        idx:0, startTs:null, teacherTab:'overview', teacherOk:false};
 
 /* ================= MASTHEAD ================= */
@@ -398,25 +439,58 @@ function renderStart(){
 
 function beginTest(){
   if(!S.student.name.trim()){alert('Please enter the student name before starting.');document.getElementById('fName').focus();return;}
-  S.answers=new Array(ITEMS.length).fill(null); S.flagged=new Set(); S.idx=0;
+  S.answers=new Array(ITEMS.length).fill(null); S.flagged=new Set(); S.touched=new Set(); S.idx=0;
   S.startTs=Date.now(); S.view='test'; render();
 }
 
 /* ================= TEST ================= */
+const TYPE_HINT={multi:'Select all that apply.',dropdown:'Choose an answer for each drop-down menu.',order:'Use the ▲▼ buttons to put the items in order.'};
+
+function controlHtml(it){
+  const a=S.answers[S.idx];
+  const t=itype(it);
+  const svg = it.svg?`<div class="svgwrap">${it.svg}</div>`:'';
+  const hint = TYPE_HINT[t]?`<div class="qhint">${TYPE_HINT[t]}</div>`:'';
+  if(t==='multi'){
+    const arr=Array.isArray(a)?a:[];
+    const opts=it.options.map((o,i)=>{
+      const sel=arr.includes(i);
+      return `<label class="opt check ${sel?'sel':''}" data-i="${i}"><span class="box">${sel?'✓':''}</span><span class="txt">${esc(o)}</span></label>`;
+    }).join('');
+    return svg+hint+`<div class="opts" id="opts">${opts}</div>`;
+  }
+  if(t==='dropdown'){
+    const arr=Array.isArray(a)?a:it.blanks.map(()=>null);
+    const parts=it.template.split(/(\{\d+\})/);
+    const sent=parts.map(p=>{
+      const m=p.match(/^\{(\d+)\}$/);
+      if(!m)return esc(p);
+      const b=+m[1], bl=it.blanks[b];
+      return `<select class="ddrop ${arr[b]!=null?'set':''}" data-b="${b}"><option value="">— choose —</option>`+
+        bl.options.map((o,oi)=>`<option value="${oi}" ${arr[b]===oi?'selected':''}>${esc(o)}</option>`).join('')+`</select>`;
+    }).join('');
+    return svg+hint+`<div class="dropsentence">${sent}</div>`;
+  }
+  if(t==='order'){
+    const order=Array.isArray(a)?a:it.start.slice();
+    const rows=order.map((ii,pos)=>`<li class="orderitem"><span class="onum">${pos+1}</span><span class="olabel">${esc(it.items[ii])}</span><span class="obtns"><button class="obtn" data-move="up" data-pos="${pos}" ${pos===0?'disabled':''} aria-label="Move up">▲</button><button class="obtn" data-move="down" data-pos="${pos}" ${pos===order.length-1?'disabled':''} aria-label="Move down">▼</button></span></li>`).join('');
+    return svg+hint+`<ol class="orderlist" id="opts">${rows}</ol>`;
+  }
+  // single
+  const opts=it.options.map((o,i)=>{
+    const sel=a===i;
+    return `<label class="opt ${sel?'sel':''}" data-i="${i}"><span class="letter">${LETTERS[i]}</span><span class="txt">${esc(o)}</span></label>`;
+  }).join('');
+  return svg+`<div class="opts" id="opts">${opts}</div>`;
+}
+
 function renderTest(){
   const it=ITEMS[S.idx];
-  const answered=S.answers.filter(a=>a!=null).length;
+  const answered=answeredCount();
   const pct=Math.round((S.idx)/ITEMS.length*100);
   app.className='wrap';
-  const optsHtml=it.options.map((o,i)=>{
-    const sel=S.answers[S.idx]===i;
-    return `<label class="opt ${sel?'sel':''}" data-i="${i}">
-      <span class="letter">${LETTERS[i]}</span>
-      <input type="radio" name="q" ${sel?'checked':''}>
-      <span class="txt">${esc(o)}</span></label>`;
-  }).join('');
   const grid=ITEMS.map((_,i)=>{
-    const cls=[S.answers[i]!=null?'answered':'',i===S.idx?'current':'',S.flagged.has(i)?'flag':''].join(' ');
+    const cls=[isAnswered(i)?'answered':'',i===S.idx?'current':'',S.flagged.has(i)?'flag':''].join(' ');
     return `<button class="${cls}" data-g="${i}">${i+1}</button>`;
   }).join('');
   const isLast=S.idx===ITEMS.length-1;
@@ -441,7 +515,7 @@ function renderTest(){
       </button>
     </div>
     <div class="q-stem">${esc(it.stem)}</div>
-    <div class="opts" id="opts">${optsHtml}</div>
+    ${controlHtml(it)}
   </div>
 
   <div class="exam-nav">
@@ -451,7 +525,7 @@ function renderTest(){
       : `<button class="btn primary" id="nextBtn">Next →</button>`}
   </div>
 
-  <details class="navigator" ${answered>0?'':''}>
+  <details class="navigator">
     <summary>Question navigator — jump to any question</summary>
     <div class="grid-q">${grid}</div>
     <div class="legend">
@@ -461,9 +535,32 @@ function renderTest(){
     </div>
   </details>`;
 
-  document.querySelectorAll('.opt').forEach(el=>{
-    el.onclick=()=>{S.answers[S.idx]=+el.dataset.i;renderTest();};
-  });
+  const t=itype(it);
+  if(t==='single'){
+    document.querySelectorAll('.opt').forEach(el=>{el.onclick=()=>{S.answers[S.idx]=+el.dataset.i;renderTest();};});
+  }else if(t==='multi'){
+    document.querySelectorAll('.opt').forEach(el=>{el.onclick=()=>{
+      let arr=Array.isArray(S.answers[S.idx])?S.answers[S.idx].slice():[];
+      const i=+el.dataset.i; const p=arr.indexOf(i);
+      if(p>=0)arr.splice(p,1); else arr.push(i);
+      S.answers[S.idx]=arr; renderTest();
+    };});
+  }else if(t==='dropdown'){
+    document.querySelectorAll('.ddrop').forEach(sel=>{sel.onchange=()=>{
+      let arr=Array.isArray(S.answers[S.idx])?S.answers[S.idx].slice():it.blanks.map(()=>null);
+      const b=+sel.dataset.b; arr[b]=sel.value===''?null:+sel.value;
+      S.answers[S.idx]=arr; renderTest();
+    };});
+  }else if(t==='order'){
+    if(!Array.isArray(S.answers[S.idx]))S.answers[S.idx]=it.start.slice();
+    document.querySelectorAll('.obtn').forEach(b=>{b.onclick=()=>{
+      const order=S.answers[S.idx].slice(); const pos=+b.dataset.pos;
+      const to=b.dataset.move==='up'?pos-1:pos+1;
+      if(to<0||to>=order.length)return;
+      const tmp=order[pos];order[pos]=order[to];order[to]=tmp;
+      S.answers[S.idx]=order; S.touched.add(S.idx); renderTest();
+    };});
+  }
   const prev=document.getElementById('prevBtn'); if(prev)prev.onclick=()=>{S.idx--;renderTest();window.scrollTo(0,0);};
   const nx=document.getElementById('nextBtn'); if(nx)nx.onclick=()=>{S.idx++;renderTest();window.scrollTo(0,0);};
   const rv=document.getElementById('reviewBtn'); if(rv)rv.onclick=reviewSubmit;
@@ -480,7 +577,7 @@ function startClock(){
 }
 
 function reviewSubmit(){
-  const answered=S.answers.filter(a=>a!=null).length;
+  const answered=answeredCount();
   const missing=ITEMS.length-answered;
   let msg=`Submit your ${S.mode}-test?`;
   if(missing>0)msg+=`\n\nYou have ${missing} unanswered question${missing>1?'s':''}. Unanswered questions are counted as incorrect.`;
@@ -494,7 +591,7 @@ function submitTest(){
   const attempt={
     name:S.student.name.trim(), period:S.student.period.trim(), mode:S.mode,
     date:new Date().toISOString(), durationSec:duration,
-    answers:S.answers.slice(), pct:sc.pct
+    answers:JSON.parse(JSON.stringify(S.answers)), pct:sc.pct
   };
   const all=loadAttempts(); all.push(attempt); saveAttempts(all);
   S.lastAttempt=attempt; S.lastScore=sc;
@@ -551,10 +648,29 @@ function renderSubmitted(){
 }
 
 /* ================= CSV ================= */
+/* Encode one response to a compact cell: single=A, multi=AC, dropdown=A|C, order=BCAD */
+function encodeResp(it,a){
+  if(a==null)return '';
+  switch(itype(it)){
+    case 'multi': return Array.isArray(a)?a.slice().sort((x,y)=>x-y).map(i=>LETTERS[i]).join(''):'';
+    case 'dropdown': return Array.isArray(a)?a.map(x=>x==null?'-':LETTERS[x]).join('|'):'';
+    case 'order': return Array.isArray(a)?a.map(i=>LETTERS[i]).join(''):'';
+    default: return LETTERS[a]||'';
+  }
+}
+function decodeResp(it,s){
+  s=(s||'').trim().toUpperCase(); if(s==='')return null;
+  switch(itype(it)){
+    case 'multi': return s.split('').map(c=>LETTERS.indexOf(c)).filter(x=>x>=0);
+    case 'dropdown': return s.split('|').map(c=>c==='-'?null:(LETTERS.indexOf(c)>=0?LETTERS.indexOf(c):null));
+    case 'order': return s.split('').map(c=>LETTERS.indexOf(c));
+    default: {const i=LETTERS.indexOf(s);return i<0?null:i;}
+  }
+}
 function csvHeader(){return ['Name','Period','Mode','Date','DurationSec','Score%'].concat(ITEMS.map(it=>it.id)).join(',');}
 function attemptToCSVRow(a){
   const cells=[a.name,a.period,a.mode,a.date,a.durationSec,a.pct].map(csvCell);
-  const ans=a.answers.map(x=>x==null?'':LETTERS[x]);
+  const ans=ITEMS.map((it,k)=>encodeResp(it,a.answers[k]));
   return cells.concat(ans).join(',');
 }
 function csvCell(v){v=String(v==null?'':v);return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;}
@@ -579,7 +695,7 @@ function sheetHeader(){
 }
 function sheetRow(a,sc){
   const dom=META.domains.map(d=>{const o=sc.byDomain[d.name];return o.n?Math.round(o.c/o.n*100):0;});
-  const ans=a.answers.map(x=>x==null?'':LETTERS[x]);
+  const ans=ITEMS.map((it,k)=>encodeResp(it,a.answers[k]));
   return [a.date,a.name,a.period,a.mode,sc.pct,sc.correct,sc.total,sc.band].concat(dom).concat(ans).concat([a.durationSec]);
 }
 function postToSheet(a,sc){
@@ -605,7 +721,7 @@ function importCSV(text){
   const existing=loadAttempts(); let added=0;
   for(let r=start;r<rows.length;r++){
     const row=rows[r]; if(row.length<6||!row[0].trim())continue;
-    const answers=ITEMS.map((_,k)=>{const v=(row[6+k]||'').trim().toUpperCase();const idx=LETTERS.indexOf(v);return idx<0?null:idx;});
+    const answers=ITEMS.map((it,k)=>decodeResp(it,row[6+k]));
     const pct=Number(row[5])||scoreAttempt(answers).pct;
     const at={name:row[0].trim(),period:(row[1]||'').trim(),mode:(row[2]||'Pre').trim(),date:(row[3]||new Date().toISOString()),durationSec:Number(row[4])||0,answers,pct};
     const dup=existing.some(e=>e.name===at.name&&e.mode===at.mode&&e.date===at.date);
@@ -870,7 +986,7 @@ document.addEventListener('keydown',e=>{
   if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;
   if(e.key==='ArrowRight'&&S.idx<ITEMS.length-1){S.idx++;renderTest();}
   else if(e.key==='ArrowLeft'&&S.idx>0){S.idx--;renderTest();}
-  else if(['1','2','3','4'].includes(e.key)){S.answers[S.idx]=+e.key-1;renderTest();}
+  else if(itype(ITEMS[S.idx])==='single'&&['1','2','3','4'].includes(e.key)&&(+e.key-1)<ITEMS[S.idx].options.length){S.answers[S.idx]=+e.key-1;renderTest();}
 });
 
 render();
