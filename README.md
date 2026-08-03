@@ -25,12 +25,19 @@ measure growth. Results break down by standard so instruction can be targeted.
 2. Wait ~1 minute, then share the address above with students.
 
 Because it's served as a real web page, the Google Sheet logging works from the Pages
-URL. Students only ever see the test — the correct answers are not shown to them, and the
-teacher dashboard is passcode-gated.
+URL. Students only ever see the test — the correct answers are not shown to them and are
+not readable in the page source.
+
+## Teacher dashboard
+
+There is no on-screen button and no passcode. Open the dashboard by adding **`#teacher`**
+to the address — e.g. `https://arosenbaum993.github.io/biologypretest2627/#teacher` — and
+bookmark that link. Students have no door to click; if one happens to open the dashboard
+on their own device, they see only their own single result (no answer key, no other
+students' data). Click **Exit to test** to return to the normal student view.
 
 ## For teachers
 
 The teacher guide (administration, data setup, and the full answer key) and the raw item
 bank are kept **out of this public repository** so the answer key isn't exposed to
-students. They're delivered to the teacher separately. Change the dashboard passcode in
-the file's `META` block before sharing the link.
+students. They're delivered to the teacher separately.
