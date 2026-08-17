@@ -266,17 +266,21 @@ const KEY_B64 = "PF1OWENVQVBFX0tfTlpDVkFSRVxLXk5YQ1RBUkVeS1xOWENVQVBFXEtfTlhDV0F
 const LETTERS=['A','B','C','D'];
 const STORE_KEY='gm_bio_attempts_v1';
 const ENDPOINT_KEY='gm_bio_endpoint';
+const QUEUE_KEY='gm_bio_pending_v1';
 /* ============================================================================
-   GOOGLE SHEETS LOGGING (optional)
-   Paste your Google Apps Script Web App URL between the quotes below to send
-   every student's results straight into your Google Sheet. Leave it blank to
-   use local saving + CSV only. Setup steps live in the Teacher dashboard →
-   Data tab, and in TEACHER_GUIDE.md.
-   NOTE: live logging works from the downloaded/hosted file (your LMS, Google
-   Drive/Sites, or opened locally). A claude.ai preview blocks outside
-   connections, so use the file itself for real class logging.
+   GOOGLE SHEETS LOGGING — LIVE
+   This test posts every submission straight into the class Google Sheet using
+   the Apps Script Web App URL below. Every student who opens the test is
+   already connected; nothing to set up on their device.
+   To point the test at a different sheet, replace the URL below with your own
+   Apps Script Web App URL (Teacher dashboard → Data tab has the script and
+   the deployment steps). Set it to "" to turn live logging off and fall back
+   to local saving + CSV only.
+   NOTE: live logging works from the hosted/downloaded file (GitHub Pages, your
+   LMS, Google Drive/Sites, or opened locally). A claude.ai preview blocks
+   outside connections, so use the real page for class logging.
 ============================================================================ */
-const SHEET_ENDPOINT = "";
+const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycby7LdDAhKC-d6zEQ1inWh64MfdyZ-rSOnEYbCEJWmhR3lq7is5higHAKO9wKZLjneBp/exec";
 /* Optional secret key. Set the SAME value here and in the Apps Script (var SECRET)
    so only this test can add rows — anyone else who has the URL is rejected. */
 const SHEET_SECRET = "";
@@ -509,7 +513,7 @@ function updateSheetStatus(){
   const map={
     sending:['Sending your results to your teacher’s class sheet…','var(--ink-soft)'],
     sent:['✓ Results sent to your teacher’s class sheet.','var(--proficient)'],
-    fail:['Your results are saved on this device. Use “Download” or “Copy” to submit them to your teacher.','var(--developing)'],
+    fail:['Couldn’t reach the class sheet — your results are saved on this device and will send automatically next time you open the test. You can also use “Download” or “Copy” to hand them to your teacher.','var(--developing)'],
     off:['','']
   };
   const [txt,col]=map[S.sheetStatus||'off'];
@@ -582,12 +586,57 @@ function sheetRow(a,sc){
   const ans=a.answers.map(x=>x==null?'':LETTERS[x]);
   return [a.date,a.name,a.period,a.mode,sc.pct,sc.correct,sc.total,sc.band].concat(dom).concat(ans).concat([a.durationSec]);
 }
+function sheetPayload(a,sc){
+  return JSON.stringify({token:getSecret(),header:sheetHeader(),row:sheetRow(a,sc)});
+}
+/* One POST. text/plain keeps this a "simple" request so the browser sends it without a
+   CORS preflight (Apps Script does not answer preflights); no-cors means the reply is
+   opaque, so a resolved promise = delivered, a rejected one = it never left the device.
+   keepalive lets the request finish even if the student closes the tab right away. */
+function sendPayload(url,payload){
+  return fetch(url,{method:'POST',mode:'no-cors',keepalive:true,
+    headers:{'Content-Type':'text/plain;charset=utf-8'},body:payload});
+}
+/* Retry a few times with backoff before giving up — a dropped phone signal mid-submit
+   is the common case, and it usually clears within seconds. */
+function sendWithRetry(url,payload,tries){
+  tries=tries==null?3:tries;
+  return sendPayload(url,payload).then(()=>({ok:true})).catch(e=>{
+    if(tries<=1)return {ok:false,error:String(e)};
+    return new Promise(r=>setTimeout(r,(4-tries)*1500))
+      .then(()=>sendWithRetry(url,payload,tries-1));
+  });
+}
 function postToSheet(a,sc){
   const url=getEndpoint();
   if(!url)return Promise.resolve({skipped:true});
-  return fetch(url,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},
-      body:JSON.stringify({token:getSecret(),header:sheetHeader(),row:sheetRow(a,sc)})})
-    .then(()=>({ok:true})).catch(e=>({ok:false,error:String(e)}));
+  const payload=sheetPayload(a,sc);
+  return sendWithRetry(url,payload).then(r=>{
+    if(!r.ok)queuePayload(payload);   // held on this device, resent next time the test opens
+    return r;
+  });
+}
+
+/* ---- offline queue: results that could not be sent are kept and retried ---- */
+function loadQueue(){try{return JSON.parse(localStorage.getItem(QUEUE_KEY))||[];}catch(e){return [];}}
+function saveQueue(q){try{localStorage.setItem(QUEUE_KEY,JSON.stringify(q));}catch(e){}}
+function queuePayload(payload){
+  const q=loadQueue();
+  if(q.some(e=>e.payload===payload))return;     // never queue the same submission twice
+  q.push({payload:payload,tries:0});
+  saveQueue(q.slice(-50));
+}
+function flushQueue(){
+  const url=getEndpoint(); const q=loadQueue();
+  if(!url||!q.length)return;
+  saveQueue([]);
+  q.forEach(entry=>{
+    sendWithRetry(url,entry.payload,1).then(r=>{
+      if(r.ok)return;
+      entry.tries=(entry.tries||0)+1;
+      if(entry.tries<10){const cur=loadQueue();cur.push(entry);saveQueue(cur.slice(-50));}
+    });
+  });
 }
 function parseCSV(text){
   const rows=[];let i=0,cur='',row=[],q=false;
@@ -805,19 +854,28 @@ function tData(body){
   body.innerHTML=`
   <div class="card" style="padding:20px 22px;display:grid;gap:14px;margin-bottom:16px">
     <div class="spread"><h3 style="font-size:1.05rem">Log results to a Google Sheet</h3>
-      <span class="pill" style="background:${(baked||ep)?'var(--proficient-soft)':'var(--surface-2)'};color:${(baked||ep)?'var(--proficient)':'var(--ink-soft)'}">${baked?'Endpoint set in file':(ep?'Endpoint set on this device':'Not connected')}</span></div>
-    <p class="muted" style="font-size:.88rem;margin:0">Send every submission straight into one Google Sheet — no per-student sign-in. One-time setup:</p>
+      <span class="pill" style="background:${(baked||ep)?'var(--proficient-soft)':'var(--surface-2)'};color:${(baked||ep)?'var(--proficient)':'var(--ink-soft)'}">${baked?'Live — connected for every student':(ep?'Endpoint set on this device':'Not connected')}</span></div>
+    ${baked?`<p class="muted" style="font-size:.88rem;margin:0">Every submission posts straight into your class Google Sheet, on the <strong>Results</strong> tab — no per-student sign-in and nothing to set up on their device. Students just open the link, take the test, and press Submit. Use <strong>Send a test row</strong> below to confirm the connection before class.</p>
+    <p class="muted" style="font-size:.88rem;margin:0">If a student's connection drops mid-submit, the test retries, then holds the result on their device and sends it automatically the next time they open the test.</p>
+    <details><summary style="cursor:pointer;font-weight:600;font-size:.9rem">Point the test at a different sheet</summary>
+      <ol class="clean" style="font-size:.9rem;padding-left:20px;display:grid;gap:4px;margin-top:8px">
+        <li>Open a new sheet at <strong>sheets.new</strong>, then <strong>Extensions → Apps Script</strong>.</li>
+        <li>Delete the sample code, paste the script below, and click <strong>Save</strong>.</li>
+        <li><strong>Deploy → New deployment → Web app.</strong> Set <em>Execute as: <strong>Me</strong></em> and <em>Who has access: <strong>Anyone</strong></em>. Deploy, then authorize.</li>
+        <li>Replace the URL on the <code>SHEET_ENDPOINT = "…"</code> line near the top of the HTML file with your new Web app URL.</li>
+      </ol></details>`
+    :`<p class="muted" style="font-size:.88rem;margin:0">Send every submission straight into one Google Sheet — no per-student sign-in. One-time setup:</p>
     <ol class="clean" style="font-size:.9rem;padding-left:20px;display:grid;gap:4px">
       <li>Open a new sheet at <strong>sheets.new</strong>, then <strong>Extensions → Apps Script</strong>.</li>
       <li>Delete the sample code, paste the script below, and click <strong>Save</strong>.</li>
       <li><strong>Deploy → New deployment → Web app.</strong> Set <em>Execute as: <strong>Me</strong></em> and <em>Who has access: <strong>Anyone</strong></em>. Deploy, then authorize.</li>
       <li>Copy the <strong>Web app URL</strong> and paste it below (this device), or into the <code>SHEET_ENDPOINT = ""</code> line near the top of the HTML file to cover every student.</li>
       <li><em>Optional but recommended:</em> pick a private <strong>secret key</strong>, put it below and in the script's <code>var SECRET = ''</code> line, so only your test can add rows.</li>
-    </ol>
+    </ol>`}
     <div class="note" style="font-size:.84rem"><strong>Your spreadsheet stays private.</strong> “Execute as: Me” means the script writes to <em>your</em> sheet as you. “Who has access: Anyone” only controls who can <em>send results to the link</em> — it does <strong>not</strong> let anyone open or view your sheet. Students never see the spreadsheet; they only submit to a one-way link. The secret key below blocks anyone else from adding rows.</div>
-    <div class="note" style="font-size:.84rem">Live logging runs from the <strong>downloaded/hosted file</strong> (your LMS, Google Drive/Sites, or opened locally). The claude.ai preview blocks outside connections, so use the file itself for real class logging. Local saving and CSV export always work as a backup.</div>
-    <label class="field" style="margin-bottom:0">Google Apps Script Web App URL (this device)
-      <input type="text" id="epIn" placeholder="https://script.google.com/macros/s/…/exec" value="${esc(ep)}"></label>
+    <div class="note" style="font-size:.84rem">Live logging runs from the <strong>real page</strong> — your GitHub Pages link, your LMS, Google Drive/Sites, or the file opened directly. A claude.ai preview blocks outside connections, so share the hosted link with students. Local saving and CSV export always work as a backup.</div>
+    <label class="field" style="margin-bottom:0">Google Apps Script Web App URL${baked?' — set in the file, so this box is not used':' (this device)'}
+      <input type="text" id="epIn" placeholder="https://script.google.com/macros/s/…/exec" value="${esc(baked||ep)}" ${baked?'disabled':''}></label>
     <label class="field" style="margin-bottom:0">Secret key (optional — must match <code>var SECRET</code> in your script)
       <input type="text" id="secIn" placeholder="e.g., biology-2026-p3" value="${esc(sec)}"></label>
     <div class="row"><button class="btn primary" id="epSave">Save settings</button>
@@ -846,7 +904,7 @@ function tData(body){
 
   const msg=(id,t)=>{const e=document.getElementById(id);if(e)e.textContent=t;};
   document.getElementById('epSave').onclick=()=>{
-    const v=document.getElementById('epIn').value.trim();
+    const v=baked?'':document.getElementById('epIn').value.trim();   // baked URL wins; ignore the box
     const k=document.getElementById('secIn').value.trim();
     if(v)localStorage.setItem(ENDPOINT_KEY,v);else localStorage.removeItem(ENDPOINT_KEY);
     if(k)localStorage.setItem(SECRET_KEY,k);else localStorage.removeItem(SECRET_KEY);
@@ -885,4 +943,5 @@ document.addEventListener('keydown',e=>{
 });
 
 render();
+flushQueue();   // resend anything a previous submission could not deliver
 </script>
