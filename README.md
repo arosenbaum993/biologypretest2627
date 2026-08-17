@@ -15,9 +15,13 @@ measure growth. Results break down by standard so instruction can be targeted.
 - **Auto-scoring** with a built-in teacher dashboard: class overview, per-standard
   mastery heatmap, per-student breakdowns, Pre→Post growth, ready-made reteach groups,
   and CSV export/import.
-- **Optional Google Sheet logging** — send every submission into one private Google
-  Sheet via a Google Apps Script endpoint (setup lives in the teacher dashboard →
-  Data tab).
+- **Live Google Sheet logging** — every submission posts straight into the class
+  Google Sheet (the `Results` tab) the moment a student presses Submit. No sign-in and
+  nothing for students to set up. If a connection drops, the test retries and then holds
+  the result on the student's device, sending it automatically the next time the test is
+  opened. To point it at a different sheet, replace the URL on the `SHEET_ENDPOINT` line
+  near the top of `index.html`; the Apps Script and deployment steps are in the teacher
+  dashboard → Data tab.
 
 ## Hosting it for students (GitHub Pages)
 
@@ -25,7 +29,8 @@ measure growth. Results break down by standard so instruction can be targeted.
 2. Wait ~1 minute, then share the address above with students.
 
 Because it's served as a real web page, the Google Sheet logging works from the Pages
-URL. Students only ever see the test — the correct answers are not shown to them, and the
+URL. Before the first class, open the dashboard → **Data** tab and press **Send a test
+row** to confirm the sheet is receiving. Students only ever see the test — the correct answers are not shown to them, and the
 teacher dashboard is passcode-gated.
 
 ## For teachers
